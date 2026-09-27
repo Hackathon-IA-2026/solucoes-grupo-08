@@ -1,0 +1,94 @@
+/* As cores da marca valem também para a palavra ARCO do cabeçalho. */
+.route-loading,
+.arco-wordmark {
+  --rl-bg: #ffffff;
+  --rl-text2: #4f6f8f;
+  --rl-muted: #5f6f7f;
+  --rl-border: #e0e8f0;
+  --rl-g1: #1f47b0;
+  --rl-g2: #2a86d0;
+  --rl-g3: #22afb8;
+  --rl-g4: #3ec46a;
+}
+
+.route-loading-word {
+  font-family: 'Orbitron', 'Outfit', sans-serif;
+  font-weight: 700;
+  font-size: clamp(3rem, 11vw, 10.5rem);
+  line-height: 1;
+  letter-spacing: 0.04em;
+  margin: 0;
+  background-image: linear-gradient(
+    90deg,
+    var(--rl-g1) 0%,
+    var(--rl-g2) 30%,
+    var(--rl-g3) 55%,
+    var(--rl-g4) 80%,
+    var(--rl-g1) 100%
+  );
+  background-size: 300% 100%;
+  background-position: 0% 50%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  animation: route-loading-sweep 3.6s linear infinite;
+}
+
+/* A palavra ARCO do cabeçalho: a mesma da tela de carregamento, parada, com o gradiente inteiro. */
+.arco-wordmark {
+  font-family: 'Orbitron', 'Outfit', sans-serif;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.04em;
+  background-image: linear-gradient(
+    90deg,
+    var(--rl-g1) 0%,
+    var(--rl-g2) 35%,
+    var(--rl-g3) 70%,
+    var(--rl-g4) 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+.route-loading-bar {
+  width: 280px;
+  max-width: 60vw;
+  height: 3px;
+  background: var(--rl-border);
+  border-radius: 2px;
+  overflow: hidden;
+  position: relative;
+}
+
+.route-loading-bar span {
+  position: absolute;
+  top: 0;
+  left: -40%;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(90deg, var(--rl-g2), var(--rl-g4));
+  animation: route-loading-run 1.6s ease-in-out infinite;
+}
+
+@keyframes route-loading-sweep {
+  to {
+    background-position: -300% 50%;
+  }
+}
+
+@keyframes route-loading-run {
+  to {
+    left: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .route-loading-word,
+  .route-loading-bar span {
+    animation: none;
+  }
+}

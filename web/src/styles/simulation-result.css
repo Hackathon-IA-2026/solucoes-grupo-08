@@ -1,0 +1,515 @@
+/* Tela de resultado da simulação. Valores do desenho do Lovable (Sora), isolados em
+   `.sim-page` para não mexer nas outras telas. */
+:is(.sim-page, .sim-tokens) {
+  --sim-radius: 0.5rem;
+  --sim-background: oklch(0.977 0.008 255);
+  --sim-surface: oklch(1 0 0);
+  --sim-foreground: oklch(0.235 0.035 260);
+  --sim-muted: oklch(0.968 0.007 247.896);
+  --sim-muted-foreground: oklch(0.53 0.025 255);
+  --sim-border: oklch(0.929 0.013 255.508);
+  --sim-ring: oklch(0.58 0.18 259);
+  --sim-brand: oklch(0.49 0.22 262);
+  --sim-brand-deep: oklch(0.34 0.15 264);
+  --sim-brand-ink: oklch(0.25 0.105 265);
+  --sim-brand-foreground: oklch(0.985 0.004 255);
+  --sim-sky-soft: oklch(0.91 0.055 254);
+  --sim-positive: oklch(0.58 0.16 153);
+  --sim-chart-history: oklch(0.9 0.015 250);
+  --sim-chart-residual: oklch(0.64 0.17 262 / 0.82);
+  --sim-alert: oklch(0.62 0.14 55);
+  --sim-alert-soft: oklch(0.975 0.02 75);
+
+  /* Os componentes antigos (Button, Input, Switch, Badge...) leem os tokens do tema. Aqui eles
+     apontam para a paleta nova, então herdam o visual sem ser reescritos um a um. */
+  --color-background: var(--sim-background);
+  --color-surface: var(--sim-surface);
+  --color-surface-secondary: var(--sim-muted);
+  --color-border: var(--sim-border);
+  --color-text-primary: var(--sim-brand-ink);
+  --color-text-secondary: var(--sim-foreground);
+  --color-text-muted: var(--sim-muted-foreground);
+  --color-primary: var(--sim-brand);
+  --color-primary-hover: var(--sim-brand-deep);
+  --color-primary-light: color-mix(in oklab, var(--sim-sky-soft) 55%, var(--sim-surface));
+  --color-focus: var(--sim-ring);
+
+  color: var(--sim-foreground);
+  font-family: 'Sora', system-ui, sans-serif;
+}
+
+.sim-page {
+  min-height: calc(100dvh - 4rem);
+  background: var(--sim-background);
+}
+
+:is(.sim-page, .sim-tokens) .sim-display {
+  font-family: 'Sora', sans-serif;
+}
+
+:is(.sim-page, .sim-tokens) .sim-eyebrow {
+  font-size: 0.68rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+:is(.sim-page, .sim-tokens) .sim-chip {
+  border-radius: 999px;
+  background: var(--sim-sky-soft);
+  padding: 0.3rem 0.7rem;
+  color: var(--sim-brand);
+  font-size: 0.68rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+:is(.sim-page, .sim-tokens) .sim-btn-secondary,
+:is(.sim-page, .sim-tokens) .sim-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.375rem;
+  font-weight: 700;
+  transition: background-color 160ms ease;
+}
+
+:is(.sim-page, .sim-tokens) .sim-btn-secondary {
+  height: 2.25rem;
+  border: 1px solid var(--sim-border);
+  background: var(--sim-surface);
+  padding-inline: 0.8rem;
+  color: var(--sim-brand-ink);
+  font-size: 0.8rem;
+}
+:is(.sim-page, .sim-tokens) .sim-btn-secondary:hover {
+  background: var(--sim-muted);
+}
+
+:is(.sim-page, .sim-tokens) .sim-btn-primary {
+  height: 2.25rem;
+  background: var(--sim-brand);
+  padding-inline: 1rem;
+  color: var(--sim-brand-foreground);
+  font-size: 0.8rem;
+}
+:is(.sim-page, .sim-tokens) .sim-btn-primary:hover {
+  background: var(--sim-brand-deep);
+}
+
+:is(.sim-page, .sim-tokens) .sim-decision {
+  border-radius: var(--sim-radius);
+  background: linear-gradient(135deg, var(--sim-brand-ink), var(--sim-brand-deep));
+  padding: 1.25rem;
+  color: var(--sim-brand-foreground);
+}
+
+:is(.sim-page, .sim-tokens) .sim-decision-tag {
+  border-radius: 0.375rem;
+  background: color-mix(in oklab, var(--sim-brand-foreground) 10%, transparent);
+  padding: 0.3rem 0.65rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--sim-brand-foreground) 20%, transparent);
+}
+
+:is(.sim-page, .sim-tokens) .sim-summary,
+:is(.sim-page, .sim-tokens) .sim-metric,
+:is(.sim-page, .sim-tokens) .sim-panel {
+  border-radius: var(--sim-radius);
+  background: var(--sim-surface);
+  box-shadow: inset 0 0 0 1px var(--sim-border);
+}
+:is(.sim-page, .sim-tokens) .sim-summary {
+  padding: 1rem;
+}
+:is(.sim-page, .sim-tokens) .sim-panel {
+  padding: 1.25rem;
+}
+
+:is(.sim-page, .sim-tokens) .sim-metric {
+  min-height: 9.5rem;
+  padding: 1rem;
+}
+:is(.sim-page, .sim-tokens) .sim-metric-featured {
+  box-shadow:
+    inset 3px 0 0 var(--sim-brand),
+    inset 0 0 0 1px var(--sim-border);
+}
+:is(.sim-page, .sim-tokens) .sim-metric-label {
+  color: var(--sim-muted-foreground);
+  font-size: 0.68rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+:is(.sim-page, .sim-tokens) .sim-metric-value {
+  color: var(--sim-brand-ink);
+  font-family: 'Sora', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 650;
+  line-height: 1;
+}
+
+:is(.sim-page, .sim-tokens) .sim-heading {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1rem;
+}
+:is(.sim-page, .sim-tokens) .sim-heading h2 {
+  color: var(--sim-brand-ink);
+  font-family: 'Sora', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+:is(.sim-page, .sim-tokens) .sim-heading p,
+:is(.sim-page, .sim-tokens) .sim-heading > span {
+  color: var(--sim-muted-foreground);
+  font-size: 0.75rem;
+}
+
+:is(.sim-page, .sim-tokens) .sim-panel-title {
+  color: var(--sim-brand-ink);
+  font-family: 'Sora', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+}
+:is(.sim-page, .sim-tokens) .sim-panel-subtitle {
+  margin-top: 0.25rem;
+  color: var(--sim-muted-foreground);
+  font-size: 0.75rem;
+}
+
+:is(.sim-page, .sim-tokens) .sim-finance-highlight {
+  border-radius: var(--sim-radius);
+  background: var(--sim-sky-soft);
+  padding: 1rem;
+}
+:is(.sim-page, .sim-tokens) .sim-finance-highlight span {
+  display: block;
+  color: var(--sim-brand);
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+:is(.sim-page, .sim-tokens) .sim-finance-highlight strong {
+  margin-top: 0.4rem;
+  display: block;
+  color: var(--sim-brand-ink);
+  font-family: 'Sora', sans-serif;
+  font-size: 1.5rem;
+}
+:is(.sim-page, .sim-tokens) .sim-finance-highlight small {
+  margin-top: 0.25rem;
+  display: block;
+  color: var(--sim-muted-foreground);
+}
+
+:is(.sim-page, .sim-tokens) .sim-finance-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  border-radius: var(--sim-radius);
+  background: var(--sim-background);
+  padding: 0.85rem 1rem;
+}
+:is(.sim-page, .sim-tokens) .sim-finance-row > span {
+  color: var(--sim-muted-foreground);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+:is(.sim-page, .sim-tokens) .sim-finance-row > strong {
+  color: var(--sim-brand-ink);
+  font-family: 'Sora', sans-serif;
+  font-size: 0.95rem;
+  text-align: right;
+}
+
+:is(.sim-page, .sim-tokens) .sim-legend {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+:is(.sim-page, .sim-tokens) .sim-legend i {
+  display: block;
+  width: 0.65rem;
+  height: 0.65rem;
+  border-radius: 0.15rem;
+}
+
+:is(.sim-page, .sim-tokens) .sim-table th {
+  padding: 0.75rem;
+  text-align: right;
+  color: var(--sim-muted-foreground);
+  font-weight: 700;
+  white-space: nowrap;
+  border-bottom: 1px solid var(--sim-border);
+}
+:is(.sim-page, .sim-tokens) .sim-table td {
+  padding: 0.65rem 0.75rem;
+  text-align: right;
+  border-bottom: 1px solid var(--sim-border);
+  white-space: nowrap;
+}
+:is(.sim-page, .sim-tokens) .sim-table th:first-child,
+:is(.sim-page, .sim-tokens) .sim-table td:first-child {
+  text-align: left;
+}
+:is(.sim-page, .sim-tokens) .sim-table tbody tr:hover {
+  background: var(--sim-muted);
+}
+
+:is(.sim-page, .sim-tokens) .sim-list-table th {
+  padding: 0.75rem;
+  text-align: left;
+  color: var(--sim-muted-foreground);
+  font-size: 0.68rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+  border-bottom: 1px solid var(--sim-border);
+}
+:is(.sim-page, .sim-tokens) .sim-list-table td {
+  padding: 0.85rem 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid var(--sim-border);
+}
+:is(.sim-page, .sim-tokens) .sim-list-table [data-align='right'] {
+  text-align: right;
+}
+:is(.sim-page, .sim-tokens) .sim-list-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+:is(.sim-page, .sim-tokens) .sim-list-table tbody tr:hover {
+  background: var(--sim-muted);
+}
+
+:is(.sim-page, .sim-tokens) .sim-overview-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  border-radius: var(--sim-radius);
+  background: var(--sim-surface);
+  padding: 1rem;
+  box-shadow: inset 0 0 0 1px var(--sim-border);
+}
+:is(.sim-page, .sim-tokens) .sim-overview-card-featured {
+  box-shadow:
+    inset 3px 0 0 var(--sim-brand),
+    inset 0 0 0 1px var(--sim-border);
+}
+:is(.sim-page, .sim-tokens) .sim-overview-label {
+  color: var(--sim-muted-foreground);
+  font-size: 0.68rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+:is(.sim-page, .sim-tokens) .sim-overview-value {
+  color: var(--sim-brand-ink);
+  font-family: 'Sora', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 650;
+  line-height: 1.1;
+}
+:is(.sim-page, .sim-tokens) .sim-overview-value small {
+  margin-left: 0.15rem;
+  color: var(--sim-muted-foreground);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+:is(.sim-page, .sim-tokens) .sim-overview-detail {
+  color: var(--sim-muted-foreground);
+  font-size: 0.75rem;
+}
+
+:is(.sim-page, .sim-tokens) .sim-filter-label {
+  display: block;
+  color: var(--sim-muted-foreground);
+  font-size: 0.68rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+:is(.sim-page, .sim-tokens) .sim-filter-input {
+  height: 2.5rem;
+  width: 100%;
+  border-radius: 0.375rem;
+  border: 1px solid var(--sim-border);
+  background: var(--sim-background);
+  color: var(--sim-brand-ink);
+  font-size: 0.8125rem;
+  outline: none;
+}
+:is(.sim-page, .sim-tokens) .sim-filter-input:focus {
+  box-shadow: 0 0 0 2px var(--sim-ring);
+}
+:is(.sim-page, .sim-tokens) .sim-filter-option {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  height: 2rem;
+  border-radius: 0.25rem;
+  padding-inline: 0.85rem;
+  color: var(--sim-muted-foreground);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+:is(.sim-page, .sim-tokens) .sim-filter-option-active {
+  background: var(--sim-surface);
+  color: var(--sim-brand-ink);
+  box-shadow: inset 0 0 0 1px var(--sim-border);
+}
+:is(.sim-page, .sim-tokens) .sim-icon-action {
+  display: inline-flex;
+  height: 2.25rem;
+  width: 2.25rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.375rem;
+  border: 1px solid var(--sim-border);
+  background: var(--sim-surface);
+  color: var(--sim-brand-ink);
+}
+:is(.sim-page, .sim-tokens) .sim-rank-number {
+  display: inline-flex;
+  height: 1.5rem;
+  min-width: 1.5rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.375rem;
+  background: var(--sim-muted);
+  color: var(--sim-brand-ink);
+  font-size: 0.7rem;
+  font-weight: 800;
+}
+:is(.sim-page, .sim-tokens) .sim-bar {
+  height: 0.375rem;
+  overflow: hidden;
+  border-radius: 999px;
+  background: var(--sim-muted);
+}
+:is(.sim-page, .sim-tokens) .sim-bar > div {
+  height: 100%;
+  border-radius: 999px;
+  background: var(--sim-brand);
+}
+
+:is(.sim-page, .sim-tokens) .sim-card {
+  overflow: hidden;
+  border-radius: var(--sim-radius);
+  border: 1px solid var(--sim-border);
+  background: var(--sim-surface);
+}
+:is(.sim-page, .sim-tokens) .sim-card-head {
+  background: color-mix(in oklab, var(--sim-muted) 35%, transparent);
+}
+:is(.sim-page, .sim-tokens) .sim-tag {
+  border-radius: 0.25rem;
+  background: var(--sim-sky-soft);
+  padding: 0.25rem 0.5rem;
+  color: var(--sim-brand);
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+:is(.sim-page, .sim-tokens) .sim-compare-table thead th {
+  padding: 0.75rem 1.25rem;
+  text-align: right;
+  color: var(--sim-muted-foreground);
+  font-size: 0.68rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  border-bottom: 1px solid var(--sim-border);
+}
+:is(.sim-page, .sim-tokens) .sim-compare-table thead th:first-child {
+  text-align: left;
+}
+:is(.sim-page, .sim-tokens) .sim-compare-table th[scope='colgroup'] {
+  padding: 0.65rem 1.25rem;
+  text-align: left;
+  background: color-mix(in oklab, var(--sim-muted) 45%, transparent);
+  color: var(--sim-brand-ink);
+  font-family: 'Sora', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  border-bottom: 1px solid var(--sim-border);
+}
+:is(.sim-page, .sim-tokens) .sim-compare-table th[scope='row'] {
+  padding: 0.7rem 1.25rem;
+  text-align: left;
+  color: var(--sim-muted-foreground);
+  font-weight: 400;
+  border-bottom: 1px solid var(--sim-border);
+}
+:is(.sim-page, .sim-tokens) .sim-compare-table td {
+  padding: 0.7rem 1.25rem;
+  text-align: right;
+  color: var(--sim-brand-ink);
+  font-weight: 600;
+  border-bottom: 1px solid var(--sim-border);
+}
+:is(.sim-page, .sim-tokens) .sim-compare-table tbody tr:hover > td,
+:is(.sim-page, .sim-tokens) .sim-compare-table tbody tr:hover > th[scope='row'] {
+  background: var(--sim-muted);
+}
+:is(.sim-page, .sim-tokens) .sim-compare-table tbody tr:last-child > td,
+:is(.sim-page, .sim-tokens) .sim-compare-table tbody tr:last-child > th {
+  border-bottom: 0;
+}
+
+@media (max-width: 640px) {
+  :is(.sim-page, .sim-tokens) .sim-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  :is(.sim-page, .sim-tokens) .sim-metric {
+    min-height: 8.5rem;
+  }
+}
+
+@keyframes agent-in {
+  from {
+    opacity: 0;
+    transform: scale(0.85) translateX(-16px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* A ligação aparece junto com o cartão a que chega. */
+@keyframes edge-in {
+  from {
+    opacity: 0;
+  }
+}
+.react-flow__edge {
+  animation: edge-in 0.5s ease-out;
+}
+@media (prefers-reduced-motion: reduce) {
+  .react-flow__edge {
+    animation: none;
+  }
+}
+
+/* O preflight do Tailwind limita todo svg a 100% da largura do pai. O contêiner das ligações do
+   React Flow tem largura zero, então sem isto as linhas entre os agentes não aparecem. */
+.react-flow svg {
+  max-width: none;
+}
+
+/* Sem nó arrastável nem selecionável, o React Flow põe pointer-events: none nos nós, e os links
+   dentro dos cartões não recebem clique. */
+.react-flow .react-flow__node {
+  pointer-events: all !important;
+}

@@ -1,0 +1,121 @@
+/* Ilustrações animadas das modalidades (etapa 3). Ciclo comum de 3,2 s: a energia entra, a
+   bateria enche e devolve; o circuito novo é desenhado e passa a conduzir. */
+
+.modality-illustration {
+  --mi-flow: var(--color-primary);
+  --mi-gain: var(--color-success);
+  --mi-stroke: var(--color-text-secondary);
+  --mi-idle: var(--color-border);
+  --mi-bg: var(--color-surface-secondary);
+}
+
+.modality-illustration .mi-cell {
+  fill: var(--mi-gain);
+  opacity: 0.15;
+  animation: mi-cell 3.2s ease-in-out infinite;
+}
+.modality-illustration .mi-cell.mi-c2 {
+  animation-delay: 0.4s;
+}
+.modality-illustration .mi-cell.mi-c3 {
+  animation-delay: 0.8s;
+}
+.modality-illustration .mi-cell.mi-c4 {
+  animation-delay: 1.2s;
+}
+
+.modality-illustration .mi-arrow-in {
+  stroke: var(--mi-flow);
+  animation: mi-pulse 3.2s ease-in-out infinite;
+}
+.modality-illustration .mi-arrow-out {
+  stroke: var(--mi-gain);
+  animation: mi-pulse 3.2s ease-in-out infinite;
+  animation-delay: 1.6s;
+}
+
+.modality-illustration .mi-flow {
+  stroke: var(--mi-flow);
+  stroke-dasharray: 8 10;
+  animation: mi-flow 1.2s linear infinite;
+}
+.modality-illustration .mi-newline {
+  stroke: var(--mi-gain);
+  stroke-dasharray: 180;
+  stroke-dashoffset: 180;
+  animation: mi-draw 3.2s ease-in-out infinite;
+}
+.modality-illustration .mi-flow2 {
+  stroke: var(--mi-gain);
+  stroke-dasharray: 8 10;
+  animation:
+    mi-flow 1.2s linear infinite,
+    mi-appear 3.2s ease-in-out infinite;
+}
+
+@keyframes mi-cell {
+  0%,
+  8% {
+    opacity: 0.15;
+  }
+  30%,
+  55% {
+    opacity: 1;
+  }
+  75%,
+  100% {
+    opacity: 0.15;
+  }
+}
+@keyframes mi-pulse {
+  0%,
+  20% {
+    opacity: 0.2;
+  }
+  40%,
+  60% {
+    opacity: 1;
+  }
+  80%,
+  100% {
+    opacity: 0.2;
+  }
+}
+@keyframes mi-flow {
+  to {
+    stroke-dashoffset: -18;
+  }
+}
+@keyframes mi-draw {
+  0%,
+  10% {
+    stroke-dashoffset: 180;
+  }
+  45%,
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes mi-appear {
+  0%,
+  45% {
+    opacity: 0;
+  }
+  60%,
+  100% {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .modality-illustration .mi-cell,
+  .modality-illustration .mi-arrow-in,
+  .modality-illustration .mi-arrow-out,
+  .modality-illustration .mi-flow,
+  .modality-illustration .mi-newline,
+  .modality-illustration .mi-flow2 {
+    animation: none;
+    opacity: 1;
+    stroke-dashoffset: 0;
+  }
+}

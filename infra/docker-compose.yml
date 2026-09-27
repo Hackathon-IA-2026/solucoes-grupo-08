@@ -1,0 +1,25 @@
+# Nome do projeto fixo: sem ele o Docker usa o nome da pasta, e tudo aparece como "infra".
+name: arco
+
+services:
+  postgres:
+    image: postgres:18
+    container_name: arco-postgres
+    environment:
+      POSTGRES_USER: arco
+      POSTGRES_PASSWORD: arco
+      POSTGRES_DB: arco
+    ports:
+      # A porta na sua máquina. Mude em .env quando a 5432 já estiver ocupada por outro Postgres.
+      - "${ARCO_PG_PORTA:-5432}:5432"
+    volumes:
+      - arco-pgdata:/var/lib/postgresql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U arco -d arco"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+volumes:
+  arco-pgdata:
+    name: arco-pgdata

@@ -1,0 +1,27 @@
+[project]
+name = "arco-agentes"
+version = "0.1.0"
+description = "MCP do ARCO e o explorador de variações: fala com a API por HTTP, nunca importa `api`."
+requires-python = ">=3.14"
+dependencies = [
+    "arco-ia",
+    "arco-motor",
+    "fastmcp[apps]==4.0.7",
+    "prefab-ui==0.20.2",
+    "httpx>=0.28",
+    "pydantic-settings>=2.15",
+    "strands-agents>=1.57",
+    "typer>=0.27",
+    "uvicorn>=0.35",
+]
+
+[project.scripts]
+arco-agentes = "arco_agentes.cli:principal"
+
+[build-system]
+requires = ["uv_build>=0.9.0,<0.10.0"]
+build-backend = "uv_build"
+
+[tool.uv.sources]
+arco-motor = { workspace = true }
+arco-ia = { workspace = true }

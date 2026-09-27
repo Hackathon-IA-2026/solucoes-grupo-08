@@ -1,0 +1,21 @@
+[project]
+name = "arco-api"
+version = "0.1.0"
+description = "API do ARCO: simulações, revisões e contrato OpenAPI."
+requires-python = ">=3.14"
+dependencies = [
+  "arco-motor",
+  "arco-dados",
+  "fastapi>=0.141",
+  "httpx>=0.28",
+  "uvicorn[standard]>=0.53",
+  "sqlalchemy>=2.0",
+  "alembic>=1.20",
+  "psycopg[binary]>=3.3",
+  "pydantic-settings>=2.15",
+  "arco-ia",
+]
+
+[build-system]
+requires = ["uv_build>=0.9.0,<0.10.0"]
+build-backend = "uv_build"

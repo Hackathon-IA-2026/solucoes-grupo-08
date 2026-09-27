@@ -1,0 +1,58 @@
+[project]
+name = "arco"
+version = "0.1.0"
+description = "ARCO, Análise Retrospectiva do Corte. Raiz do workspace."
+requires-python = ">=3.14"
+dependencies = []
+
+[tool.uv]
+package = false
+
+[tool.uv.workspace]
+members = ["motor", "dados", "api", "ia", "agentes"]
+
+[tool.uv.sources]
+arco-motor = { workspace = true }
+arco-dados = { workspace = true }
+arco-api = { workspace = true }
+arco-ia = { workspace = true }
+arco-agentes = { workspace = true }
+
+[dependency-groups]
+dev = [
+  "ruff>=0.16",
+  "pyright>=1.1.414",
+  "pytest>=9",
+  "hypothesis>=6.168",
+  "httpx>=0.28",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py314"
+src = ["motor/src", "dados/src", "api/src", "ia/src", "agentes/src"]
+extend-exclude = ["web", ".venv"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "N", "SIM", "RUF"]
+# RUF001-003: caracteres não ASCII são normais em português. N818: nomes de exceção em português.
+ignore = ["RUF001", "RUF002", "RUF003", "N818"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["arco_motor", "arco_dados", "arco_api", "arco_ia", "arco_agentes", "sinteticos"]
+
+[tool.pyright]
+pythonVersion = "3.14"
+include = ["motor", "dados", "api", "ia", "agentes"]
+exclude = ["**/node_modules", "**/.venv", "**/__pycache__"]
+venvPath = "."
+venv = ".venv"
+typeCheckingMode = "standard"
+extraPaths = ["motor/tests"]
+
+[tool.pytest.ini_options]
+testpaths = ["motor/tests", "dados/tests", "api/tests", "ia/tests", "agentes/tests"]
+# importlib: cada pacote tem a própria pasta tests/ sem __init__.py, sem colisão de nomes.
+addopts = "-q --import-mode=importlib"
+pythonpath = ["motor/tests"]
+markers = ["lento: teste demorado, fora do portão rápido do hook Stop"]

@@ -1,0 +1,324 @@
+{
+  "simulacao": {
+    "nome": "Circuito novo em Açu III (série sintética)",
+    "pergunta": "Um circuito novo na linha monitorada se paga?"
+  },
+  "cabecalho": {
+    "restricao_id": "sintetica",
+    "nome_curto": "LT 500 kV Açu III / Milagres II · C1 (sintética)",
+    "texto": "CONTROLE DE CARREGAMENTO DA LT 500 KV AÇU III / MILAGRES II – C1 (série sintética para avaliação)",
+    "instrucao_operacao": null,
+    "contingencia": null,
+    "subestacoes": [
+      "AÇU III",
+      "MILAGRES II"
+    ],
+    "presente_no_snapshot": true,
+    "snapshot_id": "sintetico",
+    "periodo_inicio": "2025-09-01T00:00:00",
+    "periodo_fim": "2026-09-01T00:00:00",
+    "energia_cortada_mwh": 525561.3,
+    "fonte": "eolica",
+    "fatia_por_fonte": [
+      {
+        "fonte": "eolica",
+        "fatia": 0.25
+      }
+    ],
+    "ocorrencias": {
+      "total": 366,
+      "energia_mwh": 525561.3,
+      "maiores": [
+        {
+          "inicio": "2025-11-29T20:00:00",
+          "fim": "2025-11-30T05:00:00",
+          "intervalos": 18,
+          "duracao_horas": 9.0,
+          "energia_mwh": 2306.8,
+          "corte_medio_maximo_mw": 256.8
+        },
+        {
+          "inicio": "2025-12-05T20:00:00",
+          "fim": "2025-12-06T05:00:00",
+          "intervalos": 18,
+          "duracao_horas": 9.0,
+          "energia_mwh": 2298.1,
+          "corte_medio_maximo_mw": 259.3
+        },
+        {
+          "inicio": "2025-11-23T20:00:00",
+          "fim": "2025-11-24T05:00:00",
+          "intervalos": 18,
+          "duracao_horas": 9.0,
+          "energia_mwh": 2290.7,
+          "corte_medio_maximo_mw": 258.3
+        }
+      ],
+      "aviso": "A contagem é sensível a artefato de apuração: uma meia hora titulada por outra razão parte em duas uma noite que fisicamente foi uma. Serve para auditoria, não como número de vitrine. O par a ler é ocorrência mais fatia de energia."
+    },
+    "equipamentos": [
+      {
+        "cod_equipamento": "LT-SINTETICA-ACU-MIL-C1",
+        "papel": "monitorado",
+        "procedencia": "automatica",
+        "tensao_kv": 500,
+        "subestacao_de": "AÇU III",
+        "subestacao_para": "MILAGRES II"
+      }
+    ],
+    "avisos": []
+  },
+  "trilha": [
+    {
+      "revisao_id": 101,
+      "posicao": 1,
+      "criada_em": "2026-09-22T09:05:00",
+      "procedencia": "por_pessoa",
+      "texto": "LT-SINTETICA-ACU-MIL-C1 · ganho 200 MW, cenário de referência",
+      "origem_do_texto": "resumo_da_configuracao"
+    }
+  ],
+  "derivados": {
+    "ordenacoes": {
+      "vpl": [],
+      "fracao_recuperada": [],
+      "payback_descontado": [],
+      "custo_por_mwh": []
+    },
+    "base": {
+      "revisao_id": 101,
+      "posicao": 1
+    },
+    "diferencas": [],
+    "sensibilidades": [],
+    "fronteiras": {
+      "menor_alavanca_com_payback_no_horizonte": {
+        "revisao_id": 101,
+        "alavanca": "LT-SINTETICA-ACU-MIL-C1 · ganho 200 MW",
+        "payback_anos": 3.073811186731417,
+        "horizonte_anos": 15
+      },
+      "maior_fracao_recuperada": {
+        "revisao_id": 101,
+        "fracao": 0.7600171473812855,
+        "custo_por_mwh_reais": 54.20917033182432
+      },
+      "tir_passa_taxa": {
+        "revisao_id": 101,
+        "tir_aa": 0.3202907852564546,
+        "taxa_desconto_aa": 0.08
+      }
+    },
+    "variou": [],
+    "ficou_parado": [
+      {
+        "campo": "modalidade",
+        "rotulo": "Modalidade",
+        "valores": [],
+        "valor": "equipamento"
+      },
+      {
+        "campo": "equipamento.tipo",
+        "rotulo": "equipamento.tipo",
+        "valores": [],
+        "valor": "adicao_circuito"
+      },
+      {
+        "campo": "equipamento.cod_equipamento",
+        "rotulo": "Linha que recebe o circuito",
+        "valores": [],
+        "valor": "LT-SINTETICA-ACU-MIL-C1"
+      },
+      {
+        "campo": "equipamento.capacidade_depois_mva",
+        "rotulo": "equipamento.capacidade_depois_mva",
+        "valores": [],
+        "valor": "vazio"
+      },
+      {
+        "campo": "equipamento.ganho_limite_mw",
+        "rotulo": "Ganho de limite",
+        "valores": [],
+        "valor": "200 MW"
+      },
+      {
+        "campo": "equipamento.disponibilidade",
+        "rotulo": "equipamento.disponibilidade",
+        "valores": [],
+        "valor": "1"
+      },
+      {
+        "campo": "equipamento.vida_util_anos",
+        "rotulo": "equipamento.vida_util_anos",
+        "valores": [],
+        "valor": "25 anos"
+      },
+      {
+        "campo": "financeira.cenario",
+        "rotulo": "Cenário",
+        "valores": [],
+        "valor": "referencia"
+      },
+      {
+        "campo": "financeira.taxa_desconto_aa",
+        "rotulo": "Taxa de desconto",
+        "valores": [],
+        "valor": "0,08 ao ano"
+      },
+      {
+        "campo": "financeira.horizonte_anos",
+        "rotulo": "financeira.horizonte_anos",
+        "valores": [],
+        "valor": "15 anos"
+      },
+      {
+        "campo": "financeira.capex_reais",
+        "rotulo": "Investimento inicial",
+        "valores": [],
+        "valor": "R$ 250.000.000"
+      },
+      {
+        "campo": "financeira.opex_fixo_reais_ano",
+        "rotulo": "Custo fixo de operação",
+        "valores": [],
+        "valor": "R$ 5.000.000 por ano"
+      },
+      {
+        "campo": "financeira.opex_variavel_reais_mwh",
+        "rotulo": "financeira.opex_variavel_reais_mwh",
+        "valores": [],
+        "valor": "R$ 0 por MWh"
+      },
+      {
+        "campo": "financeira.reposicoes",
+        "rotulo": "financeira.reposicoes",
+        "valores": [],
+        "valor": "nenhuma"
+      },
+      {
+        "campo": "financeira.valor_residual_reais",
+        "rotulo": "financeira.valor_residual_reais",
+        "valores": [],
+        "valor": "R$ 0"
+      },
+      {
+        "campo": "financeira.preco_energia_reais_mwh",
+        "rotulo": "Preço da energia",
+        "valores": [],
+        "valor": "vazio"
+      },
+      {
+        "campo": "financeira.receitas_adicionais_reais_ano",
+        "rotulo": "financeira.receitas_adicionais_reais_ano",
+        "valores": [],
+        "valor": "R$ 0 por ano"
+      }
+    ],
+    "premissas_expostas": [
+      {
+        "id": "fonte_geracao",
+        "descricao": "Qual fonte alimenta a série da restrição: eolica, solar ou ambas. Os dois arquivos do ONS são sempre ingeridos; a flag só filtra. Com ambas, a série é a soma na mesma meia hora e a regra de ocorrência roda sobre a soma. O filtro acontece em quem monta a série, antes do motor: aqui ela é carimbada para a revisão ser reproduzível, não lida para calcular.",
+        "valor": "eolica",
+        "unidade": null,
+        "faixa": null,
+        "fonte": "premissa de método",
+        "status": "proposta",
+        "de_metodo": true
+      },
+      {
+        "id": "correcao_minutos",
+        "descricao": "Ligada: a potência cortada dentro da meia hora é a média x 30 / num_minutos_cnf, supondo corte constante nesses minutos. O campo é o da razão específica, nunca o total, porque a apuração titula a meia hora por prevalência. A correção muda a potência que cada alavanca captura, nunca a energia da meia hora.",
+        "valor": "sim",
+        "unidade": null,
+        "faixa": null,
+        "fonte": "premissa de método",
+        "status": "proposta",
+        "de_metodo": true
+      },
+      {
+        "id": "preco_energia",
+        "descricao": "Valor da energia recuperada, fixo e editável na simulação. Não é série temporal. Partida: CMO médio ponderado do corte local por confiabilidade em 2025.",
+        "valor": "216",
+        "unidade": "R$/MWh",
+        "faixa": null,
+        "fonte": "CMO semi-horário do ONS, dado aberto; média ponderada de 2025 na classe corte local por confiabilidade",
+        "status": "proposta",
+        "de_metodo": false
+      },
+      {
+        "id": "anualizacao",
+        "descricao": "Período diferente de 12 meses é escalado por 12 / meses na conta anual. Dormente: o período está travado em 12 meses completos.",
+        "valor": "proporcional",
+        "unidade": null,
+        "faixa": null,
+        "fonte": "premissa de método",
+        "status": "nao_verificada",
+        "de_metodo": true
+      },
+      {
+        "id": "sensibilidade_equipamento",
+        "descricao": "MW de corte evitado por MW de limite adicional no equipamento, em cada meia hora: evitado = min(corte, ganho x sensibilidade). Adotado 1 para 1 em 2026-09-17, com a limitação declarada na tela: a sensibilidade real depende da rede e não foi estimada.",
+        "valor": "1",
+        "unidade": "MW/MW",
+        "faixa": null,
+        "fonte": "premissa de método",
+        "status": "nao_verificada",
+        "de_metodo": true
+      }
+    ]
+  },
+  "por_revisao": [
+    {
+      "revisao_id": 101,
+      "posicao": 1,
+      "criada_em": "2026-09-22T09:05:00",
+      "procedencia": "por_pessoa",
+      "modalidade": "equipamento",
+      "alavanca": "LT-SINTETICA-ACU-MIL-C1 · ganho 200 MW",
+      "cenario": "referencia",
+      "energia_recuperada_mwh": 399435.60000000003,
+      "fracao_recuperada": 0.7600171473812855,
+      "vpl_reais": 446161716.5096775,
+      "tir_aa": 0.3202907852564546,
+      "payback_simples_anos": 3.073811186731417,
+      "payback_descontado_anos": 3.6757741846725915,
+      "custo_por_mwh_reais": 54.20917033182432,
+      "avisos": 1,
+      "url": "/simulacoes/101"
+    }
+  ],
+  "nao_afirma": [
+    {
+      "titulo": "Sensibilidade calculada",
+      "texto": "O relatório só fala de sensibilidade observada entre revisões que existem. Saber o VPL com outro preço exige recalcular, e recalcular é revisão nova."
+    },
+    {
+      "titulo": "Série por mês ou por hora do dia",
+      "texto": "O resultado guarda a série por intervalo sem o instante, e não há como agregá-la por período até a rota devolvê-lo."
+    },
+    {
+      "titulo": "Ordem não é indicação",
+      "texto": "O relatório ordena as revisões por critério declarado e não indica nenhuma delas: ordenar é evidência, e a decisão fica com quem lê."
+    },
+    {
+      "titulo": "O resultado é contrafactual",
+      "texto": "Diz o que teria acontecido sob as hipóteses informadas se o passado se repetisse com a intervenção disponível. Não é previsão."
+    },
+    {
+      "titulo": "Associação não é causalidade",
+      "texto": "A associação histórica entre o texto da restrição e um equipamento não prova, sozinha, causalidade física nem sensibilidade unitária. A conversão entre reforço e corte recuperável é premissa visível e editável."
+    },
+    {
+      "titulo": "O histórico pode não representar o futuro",
+      "texto": "Rede, geração, carga, preços e regulação mudam. Vários gargalos têm obras previstas."
+    },
+    {
+      "titulo": "Energia recuperável não é receita capturável",
+      "texto": "O valor atribuído à energia é premissa, não contrato."
+    },
+    {
+      "titulo": "A simulação apoia a decisão, não a substitui",
+      "texto": "Não substitui estudo elétrico, regulatório nem de engenharia."
+    }
+  ]
+}

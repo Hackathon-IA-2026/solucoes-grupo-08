@@ -1,0 +1,75 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  python:
+    name: Python (ruff, pyright, pytest)
+    runs-on: ubuntu-latest
+    # O produto roda em Postgres, então a suíte da API roda nele, e não só em SQLite.
+    services:
+      postgres:
+        image: postgres:18
+        env:
+          POSTGRES_USER: arco
+          POSTGRES_PASSWORD: arco
+          POSTGRES_DB: arco_teste
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U arco -d arco_teste"
+          --health-interval 5s
+          --health-timeout 3s
+          --health-retries 20
+    env:
+      ARCO_TEST_DATABASE_URL: postgresql+psycopg://arco:arco@localhost:5432/arco_teste
+    steps:
+      - uses: actions/checkout@v7
+      - uses: astral-sh/setup-uv@v10.1.0
+        with:
+          enable-cache: true
+      - name: Instalar Python do .python-version
+        run: uv python install
+      - name: Sincronizar workspace
+        run: uv sync --all-packages
+      - name: Ruff
+        run: |
+          uv run ruff check .
+          uv run ruff format --check .
+      - name: Pyright
+        run: uv run pyright
+      - name: Migrations sobem do zero no Postgres
+        run: uv run --directory api alembic upgrade head
+        env:
+          DATABASE_URL: ${{ env.ARCO_TEST_DATABASE_URL }}
+      - name: Pytest
+        run: uv run pytest
+      - name: Contrato OpenAPI sem deriva
+        run: |
+          uv run python -m arco_api.contrato
+          git diff --exit-code -- contratos/openapi.json
+
+  web:
+    name: Web (oxlint, tsc, vitest, build)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: web
+    steps:
+      - uses: actions/checkout@v7
+      - uses: pnpm/action-setup@v6
+        with:
+          package_json_file: web/package.json
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: pnpm
+          cache-dependency-path: web/pnpm-lock.yaml
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm lint
+      - run: pnpm typecheck
+      - run: pnpm test
+      - run: pnpm build

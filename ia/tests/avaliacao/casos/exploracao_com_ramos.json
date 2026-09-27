@@ -1,0 +1,795 @@
+{
+  "simulacao": {
+    "nome": "Bateria em Açu III, exploração por rodadas (série sintética)",
+    "pergunta": "Até onde vale aumentar a bateria em Açu III?"
+  },
+  "cabecalho": {
+    "restricao_id": "sintetica",
+    "nome_curto": "LT 500 kV Açu III / Milagres II · C1 (sintética)",
+    "texto": "CONTROLE DE CARREGAMENTO DA LT 500 KV AÇU III / MILAGRES II – C1 (série sintética para avaliação)",
+    "instrucao_operacao": null,
+    "contingencia": null,
+    "subestacoes": [
+      "AÇU III",
+      "MILAGRES II"
+    ],
+    "presente_no_snapshot": true,
+    "snapshot_id": "sintetico",
+    "periodo_inicio": "2025-09-01T00:00:00",
+    "periodo_fim": "2026-09-01T00:00:00",
+    "energia_cortada_mwh": 525561.3,
+    "fonte": "eolica",
+    "fatia_por_fonte": [
+      {
+        "fonte": "eolica",
+        "fatia": 0.25
+      }
+    ],
+    "ocorrencias": {
+      "total": 366,
+      "energia_mwh": 525561.3,
+      "maiores": [
+        {
+          "inicio": "2025-11-29T20:00:00",
+          "fim": "2025-11-30T05:00:00",
+          "intervalos": 18,
+          "duracao_horas": 9.0,
+          "energia_mwh": 2306.8,
+          "corte_medio_maximo_mw": 256.8
+        },
+        {
+          "inicio": "2025-12-05T20:00:00",
+          "fim": "2025-12-06T05:00:00",
+          "intervalos": 18,
+          "duracao_horas": 9.0,
+          "energia_mwh": 2298.1,
+          "corte_medio_maximo_mw": 259.3
+        },
+        {
+          "inicio": "2025-11-23T20:00:00",
+          "fim": "2025-11-24T05:00:00",
+          "intervalos": 18,
+          "duracao_horas": 9.0,
+          "energia_mwh": 2290.7,
+          "corte_medio_maximo_mw": 258.3
+        }
+      ],
+      "aviso": "A contagem é sensível a artefato de apuração: uma meia hora titulada por outra razão parte em duas uma noite que fisicamente foi uma. Serve para auditoria, não como número de vitrine. O par a ler é ocorrência mais fatia de energia."
+    },
+    "equipamentos": [
+      {
+        "cod_equipamento": "LT-SINTETICA-ACU-MIL-C1",
+        "papel": "monitorado",
+        "procedencia": "automatica",
+        "tensao_kv": 500,
+        "subestacao_de": "AÇU III",
+        "subestacao_para": "MILAGRES II"
+      }
+    ],
+    "avisos": []
+  },
+  "trilha": [
+    {
+      "revisao_id": 101,
+      "posicao": 1,
+      "criada_em": "2026-09-22T09:05:00",
+      "procedencia": "por_pessoa",
+      "texto": "50 MW · 200 MWh · AÇU III, cenário de referência",
+      "origem_do_texto": "resumo_da_configuracao"
+    },
+    {
+      "revisao_id": 102,
+      "posicao": 2,
+      "criada_em": "2026-09-22T09:10:00",
+      "procedencia": "por_agente",
+      "texto": "Rodada 1: a grade de tamanhos a partir da revisão de partida, na mesma duração, mostra onde a fração recuperada deixa de subir.",
+      "origem_do_texto": "nota_do_agente"
+    },
+    {
+      "revisao_id": 103,
+      "posicao": 3,
+      "criada_em": "2026-09-22T09:15:00",
+      "procedencia": "por_agente",
+      "texto": "Rodada 1: a grade de tamanhos a partir da revisão de partida, na mesma duração, mostra onde a fração recuperada deixa de subir.",
+      "origem_do_texto": "nota_do_agente"
+    },
+    {
+      "revisao_id": 104,
+      "posicao": 4,
+      "criada_em": "2026-09-22T09:20:00",
+      "procedencia": "por_agente",
+      "texto": "Rodada 1: a grade de tamanhos a partir da revisão de partida, na mesma duração, mostra onde a fração recuperada deixa de subir.",
+      "origem_do_texto": "nota_do_agente"
+    },
+    {
+      "revisao_id": 105,
+      "posicao": 5,
+      "criada_em": "2026-09-22T09:25:00",
+      "procedencia": "por_agente",
+      "texto": "Rodada 2: a partir do tamanho em que a curva achatou, testar duração mais curta e mais longa.",
+      "origem_do_texto": "nota_do_agente"
+    },
+    {
+      "revisao_id": 106,
+      "posicao": 6,
+      "criada_em": "2026-09-22T09:30:00",
+      "procedencia": "por_agente",
+      "texto": "Rodada 2: a partir do tamanho em que a curva achatou, testar duração mais curta e mais longa.",
+      "origem_do_texto": "nota_do_agente"
+    }
+  ],
+  "derivados": {
+    "ordenacoes": {
+      "vpl": [
+        {
+          "posicao": 1,
+          "revisao_id": 101,
+          "posicao_da_revisao": 1,
+          "valor": -145849902.93459338,
+          "empate_com": []
+        },
+        {
+          "posicao": 2,
+          "revisao_id": 102,
+          "posicao_da_revisao": 2,
+          "valor": -291699805.86918676,
+          "empate_com": []
+        },
+        {
+          "posicao": 3,
+          "revisao_id": 105,
+          "posicao_da_revisao": 5,
+          "valor": -323904414.81970453,
+          "empate_com": []
+        },
+        {
+          "posicao": 4,
+          "revisao_id": 103,
+          "posicao_da_revisao": 3,
+          "valor": -437662004.2976569,
+          "empate_com": []
+        },
+        {
+          "posicao": 5,
+          "revisao_id": 106,
+          "posicao_da_revisao": 6,
+          "valor": -570301516.8184893,
+          "empate_com": []
+        },
+        {
+          "posicao": 6,
+          "revisao_id": 104,
+          "posicao_da_revisao": 4,
+          "valor": -591059015.424505,
+          "empate_com": []
+        }
+      ],
+      "fracao_recuperada": [
+        {
+          "posicao": 1,
+          "revisao_id": 106,
+          "posicao_da_revisao": 6,
+          "valor": 0.6059658502252734,
+          "empate_com": []
+        },
+        {
+          "posicao": 2,
+          "revisao_id": 104,
+          "posicao_da_revisao": 4,
+          "valor": 0.5484798823657678,
+          "empate_com": []
+        },
+        {
+          "posicao": 3,
+          "revisao_id": 103,
+          "posicao_da_revisao": 3,
+          "valor": 0.41715267086826974,
+          "empate_com": []
+        },
+        {
+          "posicao": 4,
+          "revisao_id": 102,
+          "posicao_da_revisao": 2,
+          "valor": 0.27817877762308607,
+          "empate_com": []
+        },
+        {
+          "posicao": 5,
+          "revisao_id": 105,
+          "posicao_da_revisao": 5,
+          "valor": 0.20891949235988264,
+          "empate_com": []
+        },
+        {
+          "posicao": 6,
+          "revisao_id": 101,
+          "posicao_da_revisao": 1,
+          "valor": 0.13908938881154304,
+          "empate_com": []
+        }
+      ],
+      "payback_descontado": [],
+      "custo_por_mwh": [
+        {
+          "posicao": 1,
+          "revisao_id": 106,
+          "posicao_da_revisao": 6,
+          "valor": 269.2422352999666,
+          "empate_com": []
+        },
+        {
+          "posicao": 2,
+          "revisao_id": 101,
+          "posicao_da_revisao": 1,
+          "valor": 284.36319532031,
+          "empate_com": [
+            102
+          ]
+        },
+        {
+          "posicao": 2,
+          "revisao_id": 102,
+          "posicao_da_revisao": 2,
+          "valor": 284.36319532031,
+          "empate_com": [
+            101
+          ]
+        },
+        {
+          "posicao": 4,
+          "revisao_id": 103,
+          "posicao_da_revisao": 3,
+          "valor": 284.44192594002993,
+          "empate_com": []
+        },
+        {
+          "posicao": 5,
+          "revisao_id": 104,
+          "posicao_da_revisao": 4,
+          "valor": 288.4474294079808,
+          "empate_com": []
+        },
+        {
+          "posicao": 6,
+          "revisao_id": 105,
+          "posicao_da_revisao": 5,
+          "valor": 354.96840126220405,
+          "empate_com": []
+        }
+      ]
+    },
+    "base": {
+      "revisao_id": 101,
+      "posicao": 1
+    },
+    "diferencas": [
+      {
+        "revisao_id": 102,
+        "o_que_mudou": "Potência da bateria: 50 MW → 100 MW; Capacidade da bateria: 200 MWh → 400 MWh; Investimento inicial: R$ 240.000.000 → R$ 480.000.000; Custo fixo de operação: R$ 4.800.000 por ano → R$ 9.600.000 por ano.",
+        "anterior_revisao_id": 101,
+        "delta_vpl_vs_base_reais": -145849902.93459338,
+        "delta_vpl_vs_anterior_reais": -145849902.93459338,
+        "delta_energia_vs_base_mwh": 73100.00000000001,
+        "delta_energia_vs_anterior_mwh": 73100.00000000001,
+        "delta_fracao_vs_base": 0.13908938881154304,
+        "delta_payback_simples_vs_base_anos": null
+      },
+      {
+        "revisao_id": 103,
+        "o_que_mudou": "Potência da bateria: 50 MW → 150 MW; Capacidade da bateria: 200 MWh → 600 MWh; Investimento inicial: R$ 240.000.000 → R$ 720.000.000; Custo fixo de operação: R$ 4.800.000 por ano → R$ 14.400.000 por ano.",
+        "anterior_revisao_id": 101,
+        "delta_vpl_vs_base_reais": -291812101.3630635,
+        "delta_vpl_vs_anterior_reais": -291812101.3630635,
+        "delta_energia_vs_base_mwh": 146139.3,
+        "delta_energia_vs_anterior_mwh": 146139.3,
+        "delta_fracao_vs_base": 0.2780632820567267,
+        "delta_payback_simples_vs_base_anos": null
+      },
+      {
+        "revisao_id": 104,
+        "o_que_mudou": "Potência da bateria: 50 MW → 200 MW; Capacidade da bateria: 200 MWh → 800 MWh; Investimento inicial: R$ 240.000.000 → R$ 960.000.000; Custo fixo de operação: R$ 4.800.000 por ano → R$ 19.200.000 por ano.",
+        "anterior_revisao_id": 101,
+        "delta_vpl_vs_base_reais": -445209112.4899116,
+        "delta_vpl_vs_anterior_reais": -445209112.4899116,
+        "delta_energia_vs_base_mwh": 215159.80000000005,
+        "delta_energia_vs_anterior_mwh": 215159.80000000005,
+        "delta_fracao_vs_base": 0.4093904935542248,
+        "delta_payback_simples_vs_base_anos": null
+      },
+      {
+        "revisao_id": 105,
+        "o_que_mudou": "Capacidade da bateria: 600 MWh → 300 MWh; Investimento inicial: R$ 720.000.000 → R$ 450.000.000; Custo fixo de operação: R$ 14.400.000 por ano → R$ 9.000.000 por ano.",
+        "anterior_revisao_id": 103,
+        "delta_vpl_vs_base_reais": -178054511.88511115,
+        "delta_vpl_vs_anterior_reais": 113757589.47795236,
+        "delta_energia_vs_base_mwh": 36699.999999999985,
+        "delta_energia_vs_anterior_mwh": -109439.29999999999,
+        "delta_fracao_vs_base": 0.0698301035483396,
+        "delta_payback_simples_vs_base_anos": null
+      },
+      {
+        "revisao_id": 106,
+        "o_que_mudou": "Capacidade da bateria: 600 MWh → 900 MWh; Investimento inicial: R$ 720.000.000 → R$ 990.000.000; Custo fixo de operação: R$ 14.400.000 por ano → R$ 19.800.000 por ano.",
+        "anterior_revisao_id": 103,
+        "delta_vpl_vs_base_reais": -424451613.88389593,
+        "delta_vpl_vs_anterior_reais": -132639512.52083242,
+        "delta_energia_vs_base_mwh": 245372.2,
+        "delta_energia_vs_anterior_mwh": 99232.90000000002,
+        "delta_fracao_vs_base": 0.46687646141373035,
+        "delta_payback_simples_vs_base_anos": null
+      }
+    ],
+    "sensibilidades": [
+      {
+        "de_revisao_id": 101,
+        "para_revisao_id": 102,
+        "tipo": "numerica",
+        "campo": "bateria.potencia_mw",
+        "rotulo": "Potência da bateria",
+        "de": "50 MW",
+        "para": "100 MW",
+        "delta_vpl_por_unidade_reais": -2916998.0586918676,
+        "delta_energia_por_unidade_mwh": 1462.0000000000002,
+        "delta_vpl_reais": -145849902.93459338,
+        "campos_que_mudaram": [
+          "bateria.potencia_mw",
+          "bateria.capacidade_mwh",
+          "financeira.capex_reais",
+          "financeira.opex_fixo_reais_ano"
+        ],
+        "condicao": "a capacidade acompanhou a potência na mesma duração, 4 h (Capacidade da bateria: 200 MWh → 400 MWh); o custo acompanhou a alavanca (Investimento inicial: R$ 240.000.000 → R$ 480.000.000; Custo fixo de operação: R$ 4.800.000 por ano → R$ 9.600.000 por ano); fixos: Modalidade: bateria; bateria.subestacao: AÇU III; Cenário: referencia; demais campos iguais"
+      },
+      {
+        "de_revisao_id": 101,
+        "para_revisao_id": 103,
+        "tipo": "numerica",
+        "campo": "bateria.potencia_mw",
+        "rotulo": "Potência da bateria",
+        "de": "50 MW",
+        "para": "150 MW",
+        "delta_vpl_por_unidade_reais": -2918121.013630635,
+        "delta_energia_por_unidade_mwh": 1461.3929999999998,
+        "delta_vpl_reais": -291812101.3630635,
+        "campos_que_mudaram": [
+          "bateria.potencia_mw",
+          "bateria.capacidade_mwh",
+          "financeira.capex_reais",
+          "financeira.opex_fixo_reais_ano"
+        ],
+        "condicao": "a capacidade acompanhou a potência na mesma duração, 4 h (Capacidade da bateria: 200 MWh → 600 MWh); o custo acompanhou a alavanca (Investimento inicial: R$ 240.000.000 → R$ 720.000.000; Custo fixo de operação: R$ 4.800.000 por ano → R$ 14.400.000 por ano); fixos: Modalidade: bateria; bateria.subestacao: AÇU III; Cenário: referencia; demais campos iguais"
+      },
+      {
+        "de_revisao_id": 101,
+        "para_revisao_id": 104,
+        "tipo": "numerica",
+        "campo": "bateria.potencia_mw",
+        "rotulo": "Potência da bateria",
+        "de": "50 MW",
+        "para": "200 MW",
+        "delta_vpl_por_unidade_reais": -2968060.749932744,
+        "delta_energia_por_unidade_mwh": 1434.398666666667,
+        "delta_vpl_reais": -445209112.4899116,
+        "campos_que_mudaram": [
+          "bateria.potencia_mw",
+          "bateria.capacidade_mwh",
+          "financeira.capex_reais",
+          "financeira.opex_fixo_reais_ano"
+        ],
+        "condicao": "a capacidade acompanhou a potência na mesma duração, 4 h (Capacidade da bateria: 200 MWh → 800 MWh); o custo acompanhou a alavanca (Investimento inicial: R$ 240.000.000 → R$ 960.000.000; Custo fixo de operação: R$ 4.800.000 por ano → R$ 19.200.000 por ano); fixos: Modalidade: bateria; bateria.subestacao: AÇU III; Cenário: referencia; demais campos iguais"
+      },
+      {
+        "de_revisao_id": 103,
+        "para_revisao_id": 105,
+        "tipo": "numerica",
+        "campo": "bateria.capacidade_mwh",
+        "rotulo": "Capacidade da bateria",
+        "de": "600 MWh",
+        "para": "300 MWh",
+        "delta_vpl_por_unidade_reais": -379191.96492650785,
+        "delta_energia_por_unidade_mwh": 364.7976666666666,
+        "delta_vpl_reais": 113757589.47795236,
+        "campos_que_mudaram": [
+          "bateria.capacidade_mwh",
+          "financeira.capex_reais",
+          "financeira.opex_fixo_reais_ano"
+        ],
+        "condicao": "o custo acompanhou a alavanca (Investimento inicial: R$ 720.000.000 → R$ 450.000.000; Custo fixo de operação: R$ 14.400.000 por ano → R$ 9.000.000 por ano); fixos: Modalidade: bateria; Potência da bateria: 150 MW; bateria.subestacao: AÇU III; Cenário: referencia; demais campos iguais"
+      },
+      {
+        "de_revisao_id": 103,
+        "para_revisao_id": 106,
+        "tipo": "numerica",
+        "campo": "bateria.capacidade_mwh",
+        "rotulo": "Capacidade da bateria",
+        "de": "600 MWh",
+        "para": "900 MWh",
+        "delta_vpl_por_unidade_reais": -442131.7084027747,
+        "delta_energia_por_unidade_mwh": 330.7763333333334,
+        "delta_vpl_reais": -132639512.52083242,
+        "campos_que_mudaram": [
+          "bateria.capacidade_mwh",
+          "financeira.capex_reais",
+          "financeira.opex_fixo_reais_ano"
+        ],
+        "condicao": "o custo acompanhou a alavanca (Investimento inicial: R$ 720.000.000 → R$ 990.000.000; Custo fixo de operação: R$ 14.400.000 por ano → R$ 19.800.000 por ano); fixos: Modalidade: bateria; Potência da bateria: 150 MW; bateria.subestacao: AÇU III; Cenário: referencia; demais campos iguais"
+      }
+    ],
+    "fronteiras": {
+      "menor_alavanca_com_payback_no_horizonte": null,
+      "maior_fracao_recuperada": {
+        "revisao_id": 106,
+        "fracao": 0.6059658502252734,
+        "custo_por_mwh_reais": 269.2422352999666
+      },
+      "tir_passa_taxa": null
+    },
+    "variou": [
+      {
+        "campo": "bateria.potencia_mw",
+        "rotulo": "Potência da bateria",
+        "valores": [
+          "50 MW",
+          "100 MW",
+          "150 MW",
+          "200 MW"
+        ],
+        "valor": null
+      },
+      {
+        "campo": "bateria.capacidade_mwh",
+        "rotulo": "Capacidade da bateria",
+        "valores": [
+          "200 MWh",
+          "400 MWh",
+          "600 MWh",
+          "800 MWh",
+          "300 MWh",
+          "900 MWh"
+        ],
+        "valor": null
+      },
+      {
+        "campo": "financeira.capex_reais",
+        "rotulo": "Investimento inicial",
+        "valores": [
+          "R$ 240.000.000",
+          "R$ 480.000.000",
+          "R$ 720.000.000",
+          "R$ 960.000.000",
+          "R$ 450.000.000",
+          "R$ 990.000.000"
+        ],
+        "valor": null
+      },
+      {
+        "campo": "financeira.opex_fixo_reais_ano",
+        "rotulo": "Custo fixo de operação",
+        "valores": [
+          "R$ 4.800.000 por ano",
+          "R$ 9.600.000 por ano",
+          "R$ 14.400.000 por ano",
+          "R$ 19.200.000 por ano",
+          "R$ 9.000.000 por ano",
+          "R$ 19.800.000 por ano"
+        ],
+        "valor": null
+      }
+    ],
+    "ficou_parado": [
+      {
+        "campo": "modalidade",
+        "rotulo": "Modalidade",
+        "valores": [],
+        "valor": "bateria"
+      },
+      {
+        "campo": "bateria.subestacao",
+        "rotulo": "bateria.subestacao",
+        "valores": [],
+        "valor": "AÇU III"
+      },
+      {
+        "campo": "bateria.soc_inicial",
+        "rotulo": "bateria.soc_inicial",
+        "valores": [],
+        "valor": "vazio"
+      },
+      {
+        "campo": "bateria.soc_min",
+        "rotulo": "bateria.soc_min",
+        "valores": [],
+        "valor": "0"
+      },
+      {
+        "campo": "bateria.soc_max",
+        "rotulo": "bateria.soc_max",
+        "valores": [],
+        "valor": "1"
+      },
+      {
+        "campo": "bateria.eficiencia_ida_volta",
+        "rotulo": "bateria.eficiencia_ida_volta",
+        "valores": [],
+        "valor": "0,85"
+      },
+      {
+        "campo": "bateria.disponibilidade",
+        "rotulo": "bateria.disponibilidade",
+        "valores": [],
+        "valor": "1"
+      },
+      {
+        "campo": "bateria.degradacao_por_ciclo",
+        "rotulo": "bateria.degradacao_por_ciclo",
+        "valores": [],
+        "valor": "0"
+      },
+      {
+        "campo": "bateria.degradacao_por_ano",
+        "rotulo": "bateria.degradacao_por_ano",
+        "valores": [],
+        "valor": "0"
+      },
+      {
+        "campo": "bateria.vida_util_anos",
+        "rotulo": "bateria.vida_util_anos",
+        "valores": [],
+        "valor": "15 anos"
+      },
+      {
+        "campo": "financeira.cenario",
+        "rotulo": "Cenário",
+        "valores": [],
+        "valor": "referencia"
+      },
+      {
+        "campo": "financeira.taxa_desconto_aa",
+        "rotulo": "Taxa de desconto",
+        "valores": [],
+        "valor": "0,08 ao ano"
+      },
+      {
+        "campo": "financeira.horizonte_anos",
+        "rotulo": "financeira.horizonte_anos",
+        "valores": [],
+        "valor": "15 anos"
+      },
+      {
+        "campo": "financeira.opex_variavel_reais_mwh",
+        "rotulo": "financeira.opex_variavel_reais_mwh",
+        "valores": [],
+        "valor": "R$ 0 por MWh"
+      },
+      {
+        "campo": "financeira.reposicoes",
+        "rotulo": "financeira.reposicoes",
+        "valores": [],
+        "valor": "nenhuma"
+      },
+      {
+        "campo": "financeira.valor_residual_reais",
+        "rotulo": "financeira.valor_residual_reais",
+        "valores": [],
+        "valor": "R$ 0"
+      },
+      {
+        "campo": "financeira.preco_energia_reais_mwh",
+        "rotulo": "Preço da energia",
+        "valores": [],
+        "valor": "vazio"
+      },
+      {
+        "campo": "financeira.receitas_adicionais_reais_ano",
+        "rotulo": "financeira.receitas_adicionais_reais_ano",
+        "valores": [],
+        "valor": "R$ 0 por ano"
+      }
+    ],
+    "premissas_expostas": [
+      {
+        "id": "fonte_geracao",
+        "descricao": "Qual fonte alimenta a série da restrição: eolica, solar ou ambas. Os dois arquivos do ONS são sempre ingeridos; a flag só filtra. Com ambas, a série é a soma na mesma meia hora e a regra de ocorrência roda sobre a soma. O filtro acontece em quem monta a série, antes do motor: aqui ela é carimbada para a revisão ser reproduzível, não lida para calcular.",
+        "valor": "eolica",
+        "unidade": null,
+        "faixa": null,
+        "fonte": "premissa de método",
+        "status": "proposta",
+        "de_metodo": true
+      },
+      {
+        "id": "correcao_minutos",
+        "descricao": "Ligada: a potência cortada dentro da meia hora é a média x 30 / num_minutos_cnf, supondo corte constante nesses minutos. O campo é o da razão específica, nunca o total, porque a apuração titula a meia hora por prevalência. A correção muda a potência que cada alavanca captura, nunca a energia da meia hora.",
+        "valor": "sim",
+        "unidade": null,
+        "faixa": null,
+        "fonte": "premissa de método",
+        "status": "proposta",
+        "de_metodo": true
+      },
+      {
+        "id": "preco_energia",
+        "descricao": "Valor da energia recuperada, fixo e editável na simulação. Não é série temporal. Partida: CMO médio ponderado do corte local por confiabilidade em 2025.",
+        "valor": "216",
+        "unidade": "R$/MWh",
+        "faixa": null,
+        "fonte": "CMO semi-horário do ONS, dado aberto; média ponderada de 2025 na classe corte local por confiabilidade",
+        "status": "proposta",
+        "de_metodo": false
+      },
+      {
+        "id": "anualizacao",
+        "descricao": "Período diferente de 12 meses é escalado por 12 / meses na conta anual. Dormente: o período está travado em 12 meses completos.",
+        "valor": "proporcional",
+        "unidade": null,
+        "faixa": null,
+        "fonte": "premissa de método",
+        "status": "nao_verificada",
+        "de_metodo": true
+      },
+      {
+        "id": "despacho_bateria",
+        "descricao": "Estratégia de despacho: carrega enquanto há corte residual, até a potência e o espaço restante; descarrega até a potência quando o corte cessa. A devolução usa a mesma linha e não é limitada pelo limite da restrição: premissa declarada, não omissão.",
+        "valor": "gulosa",
+        "unidade": null,
+        "faixa": null,
+        "fonte": "premissa de método",
+        "status": "proposta",
+        "de_metodo": true
+      },
+      {
+        "id": "bateria_carrega_so_do_corte",
+        "descricao": "A bateria só absorve energia que seria cortada; não compra da rede.",
+        "valor": "sim",
+        "unidade": null,
+        "faixa": null,
+        "fonte": "premissa de método",
+        "status": "proposta",
+        "de_metodo": true
+      }
+    ]
+  },
+  "por_revisao": [
+    {
+      "revisao_id": 101,
+      "posicao": 1,
+      "criada_em": "2026-09-22T09:05:00",
+      "procedencia": "por_pessoa",
+      "modalidade": "bateria",
+      "alavanca": "50 MW · 200 MWh · AÇU III",
+      "cenario": "referencia",
+      "energia_recuperada_mwh": 73100.00000000001,
+      "fracao_recuperada": 0.13908938881154304,
+      "vpl_reais": -145849902.93459338,
+      "tir_aa": -0.04355949793896824,
+      "payback_simples_anos": null,
+      "payback_descontado_anos": null,
+      "custo_por_mwh_reais": 284.36319532031,
+      "avisos": 0,
+      "url": "/simulacoes/101"
+    },
+    {
+      "revisao_id": 102,
+      "posicao": 2,
+      "criada_em": "2026-09-22T09:10:00",
+      "procedencia": "por_agente",
+      "modalidade": "bateria",
+      "alavanca": "100 MW · 400 MWh · AÇU III",
+      "cenario": "referencia",
+      "energia_recuperada_mwh": 146200.00000000003,
+      "fracao_recuperada": 0.27817877762308607,
+      "vpl_reais": -291699805.86918676,
+      "tir_aa": -0.04355949793896824,
+      "payback_simples_anos": null,
+      "payback_descontado_anos": null,
+      "custo_por_mwh_reais": 284.36319532031,
+      "avisos": 0,
+      "url": "/simulacoes/102"
+    },
+    {
+      "revisao_id": 103,
+      "posicao": 3,
+      "criada_em": "2026-09-22T09:15:00",
+      "procedencia": "por_agente",
+      "modalidade": "bateria",
+      "alavanca": "150 MW · 600 MWh · AÇU III",
+      "cenario": "referencia",
+      "energia_recuperada_mwh": 219239.3,
+      "fracao_recuperada": 0.41715267086826974,
+      "vpl_reais": -437662004.2976569,
+      "tir_aa": -0.04360259123866389,
+      "payback_simples_anos": null,
+      "payback_descontado_anos": null,
+      "custo_por_mwh_reais": 284.44192594002993,
+      "avisos": 0,
+      "url": "/simulacoes/103"
+    },
+    {
+      "revisao_id": 104,
+      "posicao": 4,
+      "criada_em": "2026-09-22T09:20:00",
+      "procedencia": "por_agente",
+      "modalidade": "bateria",
+      "alavanca": "200 MW · 800 MWh · AÇU III",
+      "cenario": "referencia",
+      "energia_recuperada_mwh": 288259.80000000005,
+      "fracao_recuperada": 0.5484798823657678,
+      "vpl_reais": -591059015.424505,
+      "tir_aa": -0.0457784915185005,
+      "payback_simples_anos": null,
+      "payback_descontado_anos": null,
+      "custo_por_mwh_reais": 288.4474294079808,
+      "avisos": 0,
+      "url": "/simulacoes/104"
+    },
+    {
+      "revisao_id": 105,
+      "posicao": 5,
+      "criada_em": "2026-09-22T09:25:00",
+      "procedencia": "por_agente",
+      "modalidade": "bateria",
+      "alavanca": "150 MW · 300 MWh · AÇU III",
+      "cenario": "referencia",
+      "energia_recuperada_mwh": 109800.0,
+      "fracao_recuperada": 0.20891949235988264,
+      "vpl_reais": -323904414.81970453,
+      "tir_aa": -0.07806895163414079,
+      "payback_simples_anos": null,
+      "payback_descontado_anos": null,
+      "custo_por_mwh_reais": 354.96840126220405,
+      "avisos": 0,
+      "url": "/simulacoes/105"
+    },
+    {
+      "revisao_id": 106,
+      "posicao": 6,
+      "criada_em": "2026-09-22T09:30:00",
+      "procedencia": "por_agente",
+      "modalidade": "bateria",
+      "alavanca": "150 MW · 900 MWh · AÇU III",
+      "cenario": "referencia",
+      "energia_recuperada_mwh": 318472.2,
+      "fracao_recuperada": 0.6059658502252734,
+      "vpl_reais": -570301516.8184893,
+      "tir_aa": -0.0350358136286269,
+      "payback_simples_anos": null,
+      "payback_descontado_anos": null,
+      "custo_por_mwh_reais": 269.2422352999666,
+      "avisos": 0,
+      "url": "/simulacoes/106"
+    }
+  ],
+  "nao_afirma": [
+    {
+      "titulo": "Sensibilidade calculada",
+      "texto": "O relatório só fala de sensibilidade observada entre revisões que existem. Saber o VPL com outro preço exige recalcular, e recalcular é revisão nova."
+    },
+    {
+      "titulo": "Série por mês ou por hora do dia",
+      "texto": "O resultado guarda a série por intervalo sem o instante, e não há como agregá-la por período até a rota devolvê-lo."
+    },
+    {
+      "titulo": "Ordem não é indicação",
+      "texto": "O relatório ordena as revisões por critério declarado e não indica nenhuma delas: ordenar é evidência, e a decisão fica com quem lê."
+    },
+    {
+      "titulo": "O resultado é contrafactual",
+      "texto": "Diz o que teria acontecido sob as hipóteses informadas se o passado se repetisse com a intervenção disponível. Não é previsão."
+    },
+    {
+      "titulo": "Associação não é causalidade",
+      "texto": "A associação histórica entre o texto da restrição e um equipamento não prova, sozinha, causalidade física nem sensibilidade unitária. A conversão entre reforço e corte recuperável é premissa visível e editável."
+    },
+    {
+      "titulo": "O histórico pode não representar o futuro",
+      "texto": "Rede, geração, carga, preços e regulação mudam. Vários gargalos têm obras previstas."
+    },
+    {
+      "titulo": "Energia recuperável não é receita capturável",
+      "texto": "O valor atribuído à energia é premissa, não contrato."
+    },
+    {
+      "titulo": "A simulação apoia a decisão, não a substitui",
+      "texto": "Não substitui estudo elétrico, regulatório nem de engenharia."
+    }
+  ]
+}

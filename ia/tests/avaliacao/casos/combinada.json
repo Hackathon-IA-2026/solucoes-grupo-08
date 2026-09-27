@@ -1,0 +1,607 @@
+{
+  "simulacao": {
+    "nome": "Circuito e bateria em Açu III (série sintética)",
+    "pergunta": "Somar bateria a um circuito novo muda a conta?"
+  },
+  "cabecalho": {
+    "restricao_id": "sintetica",
+    "nome_curto": "LT 500 kV Açu III / Milagres II · C1 (sintética)",
+    "texto": "CONTROLE DE CARREGAMENTO DA LT 500 KV AÇU III / MILAGRES II – C1 (série sintética para avaliação)",
+    "instrucao_operacao": null,
+    "contingencia": null,
+    "subestacoes": [
+      "AÇU III",
+      "MILAGRES II"
+    ],
+    "presente_no_snapshot": true,
+    "snapshot_id": "sintetico",
+    "periodo_inicio": "2025-09-01T00:00:00",
+    "periodo_fim": "2026-09-01T00:00:00",
+    "energia_cortada_mwh": 525561.3,
+    "fonte": "eolica",
+    "fatia_por_fonte": [
+      {
+        "fonte": "eolica",
+        "fatia": 0.25
+      }
+    ],
+    "ocorrencias": {
+      "total": 366,
+      "energia_mwh": 525561.3,
+      "maiores": [
+        {
+          "inicio": "2025-11-29T20:00:00",
+          "fim": "2025-11-30T05:00:00",
+          "intervalos": 18,
+          "duracao_horas": 9.0,
+          "energia_mwh": 2306.8,
+          "corte_medio_maximo_mw": 256.8
+        },
+        {
+          "inicio": "2025-12-05T20:00:00",
+          "fim": "2025-12-06T05:00:00",
+          "intervalos": 18,
+          "duracao_horas": 9.0,
+          "energia_mwh": 2298.1,
+          "corte_medio_maximo_mw": 259.3
+        },
+        {
+          "inicio": "2025-11-23T20:00:00",
+          "fim": "2025-11-24T05:00:00",
+          "intervalos": 18,
+          "duracao_horas": 9.0,
+          "energia_mwh": 2290.7,
+          "corte_medio_maximo_mw": 258.3
+        }
+      ],
+      "aviso": "A contagem é sensível a artefato de apuração: uma meia hora titulada por outra razão parte em duas uma noite que fisicamente foi uma. Serve para auditoria, não como número de vitrine. O par a ler é ocorrência mais fatia de energia."
+    },
+    "equipamentos": [
+      {
+        "cod_equipamento": "LT-SINTETICA-ACU-MIL-C1",
+        "papel": "monitorado",
+        "procedencia": "automatica",
+        "tensao_kv": 500,
+        "subestacao_de": "AÇU III",
+        "subestacao_para": "MILAGRES II"
+      }
+    ],
+    "avisos": []
+  },
+  "trilha": [
+    {
+      "revisao_id": 101,
+      "posicao": 1,
+      "criada_em": "2026-09-22T09:05:00",
+      "procedencia": "por_pessoa",
+      "texto": "LT-SINTETICA-ACU-MIL-C1 · ganho 50 MW + 50 MW · 200 MWh · AÇU III, cenário de referência",
+      "origem_do_texto": "resumo_da_configuracao"
+    },
+    {
+      "revisao_id": 102,
+      "posicao": 2,
+      "criada_em": "2026-09-22T09:10:00",
+      "procedencia": "por_pessoa",
+      "texto": "LT-SINTETICA-ACU-MIL-C1 · ganho 100 MW + 50 MW · 200 MWh · AÇU III, cenário de referência",
+      "origem_do_texto": "resumo_da_configuracao"
+    },
+    {
+      "revisao_id": 103,
+      "posicao": 3,
+      "criada_em": "2026-09-22T09:15:00",
+      "procedencia": "por_pessoa",
+      "texto": "LT-SINTETICA-ACU-MIL-C1 · ganho 200 MW + 50 MW · 200 MWh · AÇU III, cenário de referência",
+      "origem_do_texto": "resumo_da_configuracao"
+    }
+  ],
+  "derivados": {
+    "ordenacoes": {
+      "vpl": [
+        {
+          "posicao": 1,
+          "revisao_id": 103,
+          "posicao_da_revisao": 3,
+          "valor": 244462164.6144548,
+          "empate_com": []
+        },
+        {
+          "posicao": 2,
+          "revisao_id": 102,
+          "posicao_da_revisao": 2,
+          "valor": -41200613.39987117,
+          "empate_com": []
+        },
+        {
+          "posicao": 3,
+          "revisao_id": 101,
+          "posicao_da_revisao": 1,
+          "valor": -236071405.4434985,
+          "empate_com": []
+        }
+      ],
+      "fracao_recuperada": [
+        {
+          "posicao": 1,
+          "revisao_id": 103,
+          "posicao_da_revisao": 3,
+          "valor": 0.8416653458565792,
+          "empate_com": []
+        },
+        {
+          "posicao": 2,
+          "revisao_id": 102,
+          "posicao_da_revisao": 2,
+          "valor": 0.5478620667084887,
+          "empate_com": []
+        },
+        {
+          "posicao": 3,
+          "revisao_id": 101,
+          "posicao_da_revisao": 1,
+          "valor": 0.3474380628862894,
+          "empate_com": []
+        }
+      ],
+      "payback_descontado": [
+        {
+          "posicao": 1,
+          "revisao_id": 103,
+          "posicao_da_revisao": 3,
+          "valor": 7.9331052195545855,
+          "empate_com": []
+        }
+      ],
+      "custo_por_mwh": [
+        {
+          "posicao": 1,
+          "revisao_id": 103,
+          "posicao_da_revisao": 3,
+          "valor": 95.94288565239194,
+          "empate_com": []
+        },
+        {
+          "posicao": 2,
+          "revisao_id": 102,
+          "posicao_da_revisao": 2,
+          "valor": 147.39440260985586,
+          "empate_com": []
+        },
+        {
+          "posicao": 3,
+          "revisao_id": 101,
+          "posicao_da_revisao": 1,
+          "valor": 232.4207122393708,
+          "empate_com": []
+        }
+      ]
+    },
+    "base": {
+      "revisao_id": 101,
+      "posicao": 1
+    },
+    "diferencas": [
+      {
+        "revisao_id": 102,
+        "o_que_mudou": "Ganho de limite: 50 MW → 100 MW.",
+        "anterior_revisao_id": 101,
+        "delta_vpl_vs_base_reais": 194870792.04362732,
+        "delta_vpl_vs_anterior_reais": 194870792.04362732,
+        "delta_energia_vs_base_mwh": 105335.1,
+        "delta_energia_vs_anterior_mwh": 105335.1,
+        "delta_fracao_vs_base": 0.20042400382219927,
+        "delta_payback_simples_vs_base_anos": null
+      },
+      {
+        "revisao_id": 103,
+        "o_que_mudou": "Ganho de limite: 100 MW → 200 MW.",
+        "anterior_revisao_id": 102,
+        "delta_vpl_vs_base_reais": 480533570.0579533,
+        "delta_vpl_vs_anterior_reais": 285662778.014326,
+        "delta_energia_vs_base_mwh": 259746.73333333337,
+        "delta_energia_vs_anterior_mwh": 154411.63333333336,
+        "delta_fracao_vs_base": 0.4942272829702897,
+        "delta_payback_simples_vs_base_anos": null
+      }
+    ],
+    "sensibilidades": [
+      {
+        "de_revisao_id": 101,
+        "para_revisao_id": 102,
+        "tipo": "numerica",
+        "campo": "equipamento.ganho_limite_mw",
+        "rotulo": "Ganho de limite",
+        "de": "50 MW",
+        "para": "100 MW",
+        "delta_vpl_por_unidade_reais": 3897415.8408725467,
+        "delta_energia_por_unidade_mwh": 2106.702,
+        "delta_vpl_reais": 194870792.04362732,
+        "campos_que_mudaram": [
+          "equipamento.ganho_limite_mw"
+        ],
+        "condicao": "fixos: Modalidade: combinada; Potência da bateria: 50 MW; Capacidade da bateria: 200 MWh; bateria.subestacao: AÇU III; Linha que recebe o circuito: LT-SINTETICA-ACU-MIL-C1; Cenário: referencia; demais campos iguais"
+      },
+      {
+        "de_revisao_id": 102,
+        "para_revisao_id": 103,
+        "tipo": "numerica",
+        "campo": "equipamento.ganho_limite_mw",
+        "rotulo": "Ganho de limite",
+        "de": "100 MW",
+        "para": "200 MW",
+        "delta_vpl_por_unidade_reais": 2856627.7801432596,
+        "delta_energia_por_unidade_mwh": 1544.1163333333336,
+        "delta_vpl_reais": 285662778.014326,
+        "campos_que_mudaram": [
+          "equipamento.ganho_limite_mw"
+        ],
+        "condicao": "fixos: Modalidade: combinada; Potência da bateria: 50 MW; Capacidade da bateria: 200 MWh; bateria.subestacao: AÇU III; Linha que recebe o circuito: LT-SINTETICA-ACU-MIL-C1; Cenário: referencia; demais campos iguais"
+      }
+    ],
+    "fronteiras": {
+      "menor_alavanca_com_payback_no_horizonte": {
+        "revisao_id": 102,
+        "alavanca": "LT-SINTETICA-ACU-MIL-C1 · ganho 100 MW + 50 MW · 200 MWh · AÇU III",
+        "payback_anos": 9.345254655663819,
+        "horizonte_anos": 15
+      },
+      "maior_fracao_recuperada": {
+        "revisao_id": 103,
+        "fracao": 0.8416653458565792,
+        "custo_por_mwh_reais": 95.94288565239194
+      },
+      "tir_passa_taxa": {
+        "revisao_id": 103,
+        "tir_aa": 0.15493383914665315,
+        "taxa_desconto_aa": 0.08
+      }
+    },
+    "variou": [
+      {
+        "campo": "equipamento.ganho_limite_mw",
+        "rotulo": "Ganho de limite",
+        "valores": [
+          "50 MW",
+          "100 MW",
+          "200 MW"
+        ],
+        "valor": null
+      }
+    ],
+    "ficou_parado": [
+      {
+        "campo": "modalidade",
+        "rotulo": "Modalidade",
+        "valores": [],
+        "valor": "combinada"
+      },
+      {
+        "campo": "bateria.potencia_mw",
+        "rotulo": "Potência da bateria",
+        "valores": [],
+        "valor": "50 MW"
+      },
+      {
+        "campo": "bateria.capacidade_mwh",
+        "rotulo": "Capacidade da bateria",
+        "valores": [],
+        "valor": "200 MWh"
+      },
+      {
+        "campo": "bateria.subestacao",
+        "rotulo": "bateria.subestacao",
+        "valores": [],
+        "valor": "AÇU III"
+      },
+      {
+        "campo": "bateria.soc_inicial",
+        "rotulo": "bateria.soc_inicial",
+        "valores": [],
+        "valor": "vazio"
+      },
+      {
+        "campo": "bateria.soc_min",
+        "rotulo": "bateria.soc_min",
+        "valores": [],
+        "valor": "0"
+      },
+      {
+        "campo": "bateria.soc_max",
+        "rotulo": "bateria.soc_max",
+        "valores": [],
+        "valor": "1"
+      },
+      {
+        "campo": "bateria.eficiencia_ida_volta",
+        "rotulo": "bateria.eficiencia_ida_volta",
+        "valores": [],
+        "valor": "0,85"
+      },
+      {
+        "campo": "bateria.disponibilidade",
+        "rotulo": "bateria.disponibilidade",
+        "valores": [],
+        "valor": "1"
+      },
+      {
+        "campo": "bateria.degradacao_por_ciclo",
+        "rotulo": "bateria.degradacao_por_ciclo",
+        "valores": [],
+        "valor": "0"
+      },
+      {
+        "campo": "bateria.degradacao_por_ano",
+        "rotulo": "bateria.degradacao_por_ano",
+        "valores": [],
+        "valor": "0"
+      },
+      {
+        "campo": "bateria.vida_util_anos",
+        "rotulo": "bateria.vida_util_anos",
+        "valores": [],
+        "valor": "15 anos"
+      },
+      {
+        "campo": "equipamento.tipo",
+        "rotulo": "equipamento.tipo",
+        "valores": [],
+        "valor": "adicao_circuito"
+      },
+      {
+        "campo": "equipamento.cod_equipamento",
+        "rotulo": "Linha que recebe o circuito",
+        "valores": [],
+        "valor": "LT-SINTETICA-ACU-MIL-C1"
+      },
+      {
+        "campo": "equipamento.capacidade_depois_mva",
+        "rotulo": "equipamento.capacidade_depois_mva",
+        "valores": [],
+        "valor": "vazio"
+      },
+      {
+        "campo": "equipamento.disponibilidade",
+        "rotulo": "equipamento.disponibilidade",
+        "valores": [],
+        "valor": "1"
+      },
+      {
+        "campo": "equipamento.vida_util_anos",
+        "rotulo": "equipamento.vida_util_anos",
+        "valores": [],
+        "valor": "25 anos"
+      },
+      {
+        "campo": "financeira.cenario",
+        "rotulo": "Cenário",
+        "valores": [],
+        "valor": "referencia"
+      },
+      {
+        "campo": "financeira.taxa_desconto_aa",
+        "rotulo": "Taxa de desconto",
+        "valores": [],
+        "valor": "0,08 ao ano"
+      },
+      {
+        "campo": "financeira.horizonte_anos",
+        "rotulo": "financeira.horizonte_anos",
+        "valores": [],
+        "valor": "15 anos"
+      },
+      {
+        "campo": "financeira.capex_reais",
+        "rotulo": "Investimento inicial",
+        "valores": [],
+        "valor": "R$ 490.000.000"
+      },
+      {
+        "campo": "financeira.opex_fixo_reais_ano",
+        "rotulo": "Custo fixo de operação",
+        "valores": [],
+        "valor": "R$ 9.800.000 por ano"
+      },
+      {
+        "campo": "financeira.opex_variavel_reais_mwh",
+        "rotulo": "financeira.opex_variavel_reais_mwh",
+        "valores": [],
+        "valor": "R$ 0 por MWh"
+      },
+      {
+        "campo": "financeira.reposicoes",
+        "rotulo": "financeira.reposicoes",
+        "valores": [],
+        "valor": "nenhuma"
+      },
+      {
+        "campo": "financeira.valor_residual_reais",
+        "rotulo": "financeira.valor_residual_reais",
+        "valores": [],
+        "valor": "R$ 0"
+      },
+      {
+        "campo": "financeira.preco_energia_reais_mwh",
+        "rotulo": "Preço da energia",
+        "valores": [],
+        "valor": "vazio"
+      },
+      {
+        "campo": "financeira.receitas_adicionais_reais_ano",
+        "rotulo": "financeira.receitas_adicionais_reais_ano",
+        "valores": [],
+        "valor": "R$ 0 por ano"
+      }
+    ],
+    "premissas_expostas": [
+      {
+        "id": "fonte_geracao",
+        "descricao": "Qual fonte alimenta a série da restrição: eolica, solar ou ambas. Os dois arquivos do ONS são sempre ingeridos; a flag só filtra. Com ambas, a série é a soma na mesma meia hora e a regra de ocorrência roda sobre a soma. O filtro acontece em quem monta a série, antes do motor: aqui ela é carimbada para a revisão ser reproduzível, não lida para calcular.",
+        "valor": "eolica",
+        "unidade": null,
+        "faixa": null,
+        "fonte": "premissa de método",
+        "status": "proposta",
+        "de_metodo": true
+      },
+      {
+        "id": "correcao_minutos",
+        "descricao": "Ligada: a potência cortada dentro da meia hora é a média x 30 / num_minutos_cnf, supondo corte constante nesses minutos. O campo é o da razão específica, nunca o total, porque a apuração titula a meia hora por prevalência. A correção muda a potência que cada alavanca captura, nunca a energia da meia hora.",
+        "valor": "sim",
+        "unidade": null,
+        "faixa": null,
+        "fonte": "premissa de método",
+        "status": "proposta",
+        "de_metodo": true
+      },
+      {
+        "id": "preco_energia",
+        "descricao": "Valor da energia recuperada, fixo e editável na simulação. Não é série temporal. Partida: CMO médio ponderado do corte local por confiabilidade em 2025.",
+        "valor": "216",
+        "unidade": "R$/MWh",
+        "faixa": null,
+        "fonte": "CMO semi-horário do ONS, dado aberto; média ponderada de 2025 na classe corte local por confiabilidade",
+        "status": "proposta",
+        "de_metodo": false
+      },
+      {
+        "id": "anualizacao",
+        "descricao": "Período diferente de 12 meses é escalado por 12 / meses na conta anual. Dormente: o período está travado em 12 meses completos.",
+        "valor": "proporcional",
+        "unidade": null,
+        "faixa": null,
+        "fonte": "premissa de método",
+        "status": "nao_verificada",
+        "de_metodo": true
+      },
+      {
+        "id": "sensibilidade_equipamento",
+        "descricao": "MW de corte evitado por MW de limite adicional no equipamento, em cada meia hora: evitado = min(corte, ganho x sensibilidade). Adotado 1 para 1 em 2026-09-17, com a limitação declarada na tela: a sensibilidade real depende da rede e não foi estimada.",
+        "valor": "1",
+        "unidade": "MW/MW",
+        "faixa": null,
+        "fonte": "premissa de método",
+        "status": "nao_verificada",
+        "de_metodo": true
+      },
+      {
+        "id": "despacho_bateria",
+        "descricao": "Estratégia de despacho: carrega enquanto há corte residual, até a potência e o espaço restante; descarrega até a potência quando o corte cessa. A devolução usa a mesma linha e não é limitada pelo limite da restrição: premissa declarada, não omissão.",
+        "valor": "gulosa",
+        "unidade": null,
+        "faixa": null,
+        "fonte": "premissa de método",
+        "status": "proposta",
+        "de_metodo": true
+      },
+      {
+        "id": "bateria_carrega_so_do_corte",
+        "descricao": "A bateria só absorve energia que seria cortada; não compra da rede.",
+        "valor": "sim",
+        "unidade": null,
+        "faixa": null,
+        "fonte": "premissa de método",
+        "status": "proposta",
+        "de_metodo": true
+      },
+      {
+        "id": "ordem_combinada",
+        "descricao": "Na modalidade combinada, o equipamento reduz o corte primeiro e a bateria atua sobre o residual.",
+        "valor": "equipamento_depois_bateria",
+        "unidade": null,
+        "faixa": null,
+        "fonte": "premissa de método",
+        "status": "proposta",
+        "de_metodo": true
+      }
+    ]
+  },
+  "por_revisao": [
+    {
+      "revisao_id": 101,
+      "posicao": 1,
+      "criada_em": "2026-09-22T09:05:00",
+      "procedencia": "por_pessoa",
+      "modalidade": "combinada",
+      "alavanca": "LT-SINTETICA-ACU-MIL-C1 · ganho 50 MW + 50 MW · 200 MWh · AÇU III",
+      "cenario": "referencia",
+      "energia_recuperada_mwh": 182600.00000000003,
+      "fracao_recuperada": 0.3474380628862894,
+      "vpl_reais": -236071405.4434985,
+      "tir_aa": -0.011807844707920012,
+      "payback_simples_anos": null,
+      "payback_descontado_anos": null,
+      "custo_por_mwh_reais": 232.4207122393708,
+      "avisos": 1,
+      "url": "/simulacoes/101"
+    },
+    {
+      "revisao_id": 102,
+      "posicao": 2,
+      "criada_em": "2026-09-22T09:10:00",
+      "procedencia": "por_pessoa",
+      "modalidade": "combinada",
+      "alavanca": "LT-SINTETICA-ACU-MIL-C1 · ganho 100 MW + 50 MW · 200 MWh · AÇU III",
+      "cenario": "referencia",
+      "energia_recuperada_mwh": 287935.10000000003,
+      "fracao_recuperada": 0.5478620667084887,
+      "vpl_reais": -41200613.39987117,
+      "tir_aa": 0.06595496624285568,
+      "payback_simples_anos": 9.345254655663819,
+      "payback_descontado_anos": null,
+      "custo_por_mwh_reais": 147.39440260985586,
+      "avisos": 1,
+      "url": "/simulacoes/102"
+    },
+    {
+      "revisao_id": 103,
+      "posicao": 3,
+      "criada_em": "2026-09-22T09:15:00",
+      "procedencia": "por_pessoa",
+      "modalidade": "combinada",
+      "alavanca": "LT-SINTETICA-ACU-MIL-C1 · ganho 200 MW + 50 MW · 200 MWh · AÇU III",
+      "cenario": "referencia",
+      "energia_recuperada_mwh": 442346.7333333334,
+      "fracao_recuperada": 0.8416653458565792,
+      "vpl_reais": 244462164.6144548,
+      "tir_aa": 0.15493383914665315,
+      "payback_simples_anos": 5.710497775315051,
+      "payback_descontado_anos": 7.9331052195545855,
+      "custo_por_mwh_reais": 95.94288565239194,
+      "avisos": 1,
+      "url": "/simulacoes/103"
+    }
+  ],
+  "nao_afirma": [
+    {
+      "titulo": "Sensibilidade calculada",
+      "texto": "O relatório só fala de sensibilidade observada entre revisões que existem. Saber o VPL com outro preço exige recalcular, e recalcular é revisão nova."
+    },
+    {
+      "titulo": "Série por mês ou por hora do dia",
+      "texto": "O resultado guarda a série por intervalo sem o instante, e não há como agregá-la por período até a rota devolvê-lo."
+    },
+    {
+      "titulo": "Ordem não é indicação",
+      "texto": "O relatório ordena as revisões por critério declarado e não indica nenhuma delas: ordenar é evidência, e a decisão fica com quem lê."
+    },
+    {
+      "titulo": "O resultado é contrafactual",
+      "texto": "Diz o que teria acontecido sob as hipóteses informadas se o passado se repetisse com a intervenção disponível. Não é previsão."
+    },
+    {
+      "titulo": "Associação não é causalidade",
+      "texto": "A associação histórica entre o texto da restrição e um equipamento não prova, sozinha, causalidade física nem sensibilidade unitária. A conversão entre reforço e corte recuperável é premissa visível e editável."
+    },
+    {
+      "titulo": "O histórico pode não representar o futuro",
+      "texto": "Rede, geração, carga, preços e regulação mudam. Vários gargalos têm obras previstas."
+    },
+    {
+      "titulo": "Energia recuperável não é receita capturável",
+      "texto": "O valor atribuído à energia é premissa, não contrato."
+    },
+    {
+      "titulo": "A simulação apoia a decisão, não a substitui",
+      "texto": "Não substitui estudo elétrico, regulatório nem de engenharia."
+    }
+  ]
+}

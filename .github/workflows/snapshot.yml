@@ -1,0 +1,98 @@
+name: Snapshot do ONS
+
+# Baixa os arquivos do bucket público do ONS, calcula o manifesto (sha256 de cada arquivo)
+# e publica uma release nova só quando o conteúdo mudou em relação à última release.
+# O ONS atualiza os dados às 12h e às 19h (horário de Brasília) e regrava arquivos já
+# publicados sem guardar versão; por isso a cópia datada é feita em release.
+#
+# Só roda sob demanda (Actions → Snapshot do ONS → Run workflow). Para cópia diária,
+# acrescente um gatilho `schedule` com `cron: "17 0 * * *"` (21:17 em Brasília).
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: astral-sh/setup-uv@v10.1.0
+      - run: uv python install
+      - run: uv sync --package arco-dados
+
+      - name: Ingerir do bucket do ONS
+        run: uv run arco-dados ingerir --destino snapshots/novo
+
+      - name: Comparar com a última release
+        id: comparar
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          tag=$(gh release list --limit 100 --json tagName,isDraft \
+                --jq '[.[] | select(.isDraft | not) | .tagName | select(startswith("snapshot/"))] | first // empty')
+          if [ -n "$tag" ]; then
+            mkdir -p snapshots/anterior
+            gh release download "$tag" --pattern manifesto.json --dir snapshots/anterior
+            if uv run arco-dados comparar snapshots/anterior/manifesto.json snapshots/novo/manifesto.json; then
+              echo "Sem mudança em relação a $tag."
+              echo "mudou=false" >> "$GITHUB_OUTPUT"
+              {
+                echo "## Snapshot de $(date -u +%Y-%m-%d): sem mudança"
+                echo
+                echo "Os $(ls snapshots/novo/*.parquet snapshots/novo/*.pdf snapshots/novo/*.json 2>/dev/null | grep -vc manifesto) arquivos do ONS têm o mesmo sha256 da release \`$tag\`. Nenhuma release nova."
+              } >> "$GITHUB_STEP_SUMMARY"
+              exit 0
+            fi
+            uv run arco-dados comparar snapshots/anterior/manifesto.json snapshots/novo/manifesto.json > snapshots/diferencas.txt || true
+          fi
+          echo "mudou=true" >> "$GITHUB_OUTPUT"
+
+      - name: Publicar release
+        if: steps.comparar.outputs.mudou == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          data=$(date -u +%Y-%m-%d)
+          tag="snapshot/$data"
+          n=1
+          while gh release view "$tag" >/dev/null 2>&1; do n=$((n+1)); tag="snapshot/$data.$n"; done
+          gh release create "$tag" --title "Snapshot $data" --notes-file snapshots/novo/NOTAS.md snapshots/novo/*
+          echo "Publicada a release $tag."
+          {
+            echo "## Snapshot de $data: release \`$tag\` publicada"
+            echo
+            if [ -s snapshots/diferencas.txt ]; then
+              echo "O que mudou em relação à release anterior:"
+              echo
+              echo '```'
+              cat snapshots/diferencas.txt
+              echo '```'
+            else
+              echo "Primeira release, ou release anterior sem manifesto."
+            fi
+            echo
+            cat snapshots/novo/NOTAS.md
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Abrir ou atualizar issue em caso de falha
+        if: failure()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          url="$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
+          titulo="Snapshot do ONS falhou"
+          corpo="Execução com falha em $(date -u +'%Y-%m-%d %H:%M') UTC: $url"
+          detalhe="O job roda sob demanda (.github/workflows/snapshot.yml). Enquanto esta issue estiver aberta, falhas novas viram comentários aqui. Feche ao resolver."
+          numero=$(gh issue list --state open --search "\"$titulo\" in:title" --json number --jq '.[0].number // empty')
+          if [ -n "$numero" ]; then
+            gh issue comment "$numero" --body "$corpo"
+          else
+            gh issue create --title "$titulo" --body "$corpo"$'\n\n'"$detalhe"
+          fi
