@@ -21,7 +21,7 @@ git clone git@github.com:Hackathon-IA-2026/solucoes-grupo-08.git
 cd solucoes-grupo-08
 
 # Instale as dependências
-cp .env.exemplo .env   # GITHUB_TOKEN enquanto o repositório for privado; GEMINI_API_KEY para a IA
+cp .env.exemplo .env   # preencha GEMINI_API_KEY; GITHUB_TOKEN enquanto o repositório for privado
 make bootstrap         # dependências, snapshot 2026-09-21 dos dados do ONS, Postgres, esquema e carga
 
 # Rode o projeto
@@ -32,7 +32,7 @@ make test      # testes
 
 ## Pré-requisitos
 
-[uv](https://docs.astral.sh/uv/) (instala o Python 3.14), Node 22 com [pnpm](https://pnpm.io/), Docker com Compose e `make`.
+[uv](https://docs.astral.sh/uv/) (instala o Python 3.14), Node 22 com [pnpm](https://pnpm.io/), Docker com Compose e `make`. Chave da API do Google Gemini, gerada no [Google AI Studio](https://aistudio.google.com/), em `GEMINI_API_KEY` no `.env`: sem ela a exploração por agente e o relatório não rodam, e o `make servidor` não sobe. Enquanto este repositório for privado, um token do GitHub com leitura dele em `GITHUB_TOKEN` no `.env`, para o `make bootstrap` baixar o snapshot dos dados (com o `gh` logado, `gh auth token` dá um).
 
 ## Licença
 
