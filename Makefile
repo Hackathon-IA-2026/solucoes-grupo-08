@@ -89,7 +89,10 @@ tunel: ## expõe a API na internet por túnel efêmero da Cloudflare, URL sortea
 tunel-fixo: ## o mesmo, na URL fixa do subdomínio configurado no painel (exige a API no ar)
 > @PORTA=$(or $(PORTA),8000) infra/tunel-fixo.sh
 
-servidor: ## sobe a API, o MCP e o túnel da URL fixa juntos; um Ctrl+C derruba os três
+verificar: ## confere o que make servidor precisa e diz o que falta (PORTA=8000)
+> @PORTA=$(or $(PORTA),8000) infra/verificar.sh
+
+servidor: verificar ## confere as dependências e sobe a API, o MCP e o túnel juntos; um Ctrl+C derruba os três
 > @PORTA=$(or $(PORTA),8000) infra/servidor.sh
 
-.PHONY: ajuda instalar db db-parar snapshot ingerir preparar banco migrar carregar vinculos semear exportar-vinculos bootstrap api agentes web test lint formatar contrato tunel tunel-fixo servidor
+.PHONY: ajuda instalar db db-parar snapshot ingerir preparar banco migrar carregar vinculos semear exportar-vinculos bootstrap api agentes web test lint formatar contrato tunel tunel-fixo verificar servidor

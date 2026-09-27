@@ -25,9 +25,8 @@ cp .env.exemplo .env   # GITHUB_TOKEN enquanto o repositório for privado; GEMIN
 make bootstrap         # dependências, snapshot 2026-09-21 dos dados do ONS, Postgres, esquema e carga
 
 # Rode o projeto
-make api       # API em http://localhost:8000
-make web       # painel em http://localhost:5173
-make agentes   # MCP em http://localhost:8100/mcp (com a API no ar)
+make servidor  # confere as dependências e sobe a API (:8000) e o MCP (:8100/mcp); se faltar algo, para e diz o quê
+make web       # painel em http://localhost:5173, em outro terminal
 make test      # testes
 ```
 
