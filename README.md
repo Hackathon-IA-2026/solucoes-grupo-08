@@ -17,7 +17,7 @@
 
 ```bash
 # Clone o repositório
-git clone https://github.com/Hackathon-IA-2026/solucoes-grupo-08.git
+git clone git@github.com:Hackathon-IA-2026/solucoes-grupo-08.git
 cd solucoes-grupo-08
 
 # Instale as dependências
